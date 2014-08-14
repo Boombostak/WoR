@@ -9,6 +9,7 @@ public class player_shooting : MonoBehaviour {
     private bool shooting;
     private float shot_countdown = 0;
     private bool ready_to_shoot;
+
     
     // Use this for initialization
 	void Start () {
@@ -29,8 +30,8 @@ public class player_shooting : MonoBehaviour {
         if (shooting && ready_to_shoot)
         {
             //fire a shot
-            Instantiate(player)
+        }
 
 	}
 }
-    */
+*/

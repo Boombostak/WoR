@@ -1,14 +1,29 @@
-﻿/*using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-public class player_shooting : MonoBehaviour {
+public class player_shooting : MonoBehaviour
+{
 
+
+
+    public GameObject shot;
+    
+    //void Update()
+    //{
+      //  if (Input.GetButtonDown("Fire1"))
+        //    Instantiate(shot, transform.position, transform.rotation);
+    //}
+
+
+
+    
+    
     //Shooting
     public float fire_rate; // number of shots per second
     public float damage; //damage per shot
     private bool shooting;
     private float shot_countdown = 0;
-    private bool ready_to_shoot;
+    private bool ready_to_shoot = true;
 
     
     // Use this for initialization
@@ -29,9 +44,8 @@ public class player_shooting : MonoBehaviour {
 
         if (shooting && ready_to_shoot)
         {
-            //fire a shot
+            Instantiate(shot, transform.position, transform.rotation);//fire a shot
         }
 
 	}
 }
-*/

@@ -6,7 +6,7 @@ public class player_shooting : MonoBehaviour
 
 
 
-    public GameObject shot;
+    
     
     //void Update()
     //{
@@ -20,6 +20,7 @@ public class player_shooting : MonoBehaviour
     private bool shooting;
     private float shot_countdown;
     private bool ready_to_shoot;
+    public Transform shot;
 
     
     // Use this for initialization

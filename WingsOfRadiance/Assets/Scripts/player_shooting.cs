@@ -55,7 +55,7 @@ public class player_shooting : MonoBehaviour
             Instantiate(shot, transform.position, transform.rotation);//fire a shot
             shot_countdown = BulletBehaviour.rof;//increase the countdown
         }
-        Debug.Log(shot_countdown);
+        //Debug.Log(shot_countdown);
         //Debug.Log(Time.time);
 	}
 }

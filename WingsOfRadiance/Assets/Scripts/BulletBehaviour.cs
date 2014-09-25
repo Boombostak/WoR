@@ -8,7 +8,7 @@ public class BulletBehaviour : MonoBehaviour
     public static float rof;
     public float firerate;
     public float self_destruct_timer;
-    public GameObject loot;
+
 
     // Use this for initialization
 
@@ -28,10 +28,13 @@ public class BulletBehaviour : MonoBehaviour
     {
         if (othercollider.tag == "enemy")
         {
-            loot = othercollider.gameObject.GetComponent<LootDropper>().what_to_drop;
-            //Instantiate (loot);
+            if (othercollider.gameObject.GetComponent<LootDropper>().dropbool == true)
+            {
+                Instantiate((GameObject)othercollider.gameObject.GetComponent<LootDropper>().what_to_drop, this.transform.position, this.transform.rotation);
+            }
             Destroy(othercollider.gameObject);
             Destroy(gameObject);
+            
         }
             //Debug.Log("hit"+othercollider);
     }

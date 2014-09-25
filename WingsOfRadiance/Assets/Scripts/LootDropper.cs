@@ -4,7 +4,7 @@ using System.Collections;
 public class LootDropper : MonoBehaviour
 {
     public GameObject what_to_drop;
-    private bool dropbool;
+    public bool dropbool;
     private int rng_drop;
     private int rng_what;
     public int droppercentage;

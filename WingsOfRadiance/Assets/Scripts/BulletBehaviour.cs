@@ -28,7 +28,7 @@ public class BulletBehaviour : MonoBehaviour
     {
         if (othercollider.tag == "enemy")
         {
-            if (othercollider.gameObject.GetComponent<LootDropper>().dropbool == true)
+            if ((GameObject)othercollider.gameObject.GetComponent<LootDropper>().what_to_drop != null)
             {
                 Instantiate((GameObject)othercollider.gameObject.GetComponent<LootDropper>().what_to_drop, this.transform.position, this.transform.rotation);
             }

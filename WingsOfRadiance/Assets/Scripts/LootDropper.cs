@@ -15,11 +15,15 @@ public class LootDropper : MonoBehaviour
         rng_drop = Random.Range(0, 100);
         rng_what = Random.Range(0, droparray.Length);
             
-        if (rng_drop <= droppercentage)
+        /*
+         * if (rng_drop <= droppercentage)
             {
                 dropbool = true;
             }
-            
+         */
+
+        dropbool = true;
+
         if (dropbool == true)
             {
                 what_to_drop = (GameObject) droparray.GetValue(rng_what);

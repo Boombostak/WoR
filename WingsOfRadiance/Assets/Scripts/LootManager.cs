@@ -9,27 +9,27 @@ public class LootManager : MonoBehaviour
     public class LootTable
     {
         public string name;
-        public GameObject[] items;
+        new public GameObject[] items;
     }
 
     [System.Serializable]
     public class LootItemRarity
     {
         public string name;
-        public LootTable [] itemrarity;
+        new public LootTable [] itemrarity;
     }
     [System.Serializable]
     public class LootItemType
     {
         public string name;
-        public LootItemRarity [] itemtype;
+        new public LootItemRarity [] itemtype;
     }
     [System.Serializable]
     public class LootLevel
     {
-        public LootItemType[] lootlevel;
+        new public LootItemType[] lootlevel;
     }
 
 
-    public LootLevel Llvl;
+    new public LootLevel Llvl;
 }

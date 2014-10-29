@@ -31,6 +31,13 @@ public class PickPicker : MonoBehaviour {
         lootmanager = GameObject.Find("LootManagerGO");
         
         currentlvl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLvl>().playerlvl;
+    }
+
+    public GameObject RollLoot()
+    
+        {
+
+    
         
         lvl_table = lootmanager.GetComponent<LootManager>().Llvl.lootlevel[currentlvl];
         type_length = lvl_table.itemtype.Length;
@@ -38,7 +45,10 @@ public class PickPicker : MonoBehaviour {
         
         rarity_table = lvl_table.itemtype[rng_type];
         rarity_length = rarity_table.itemrarity.Length;
-        rng_rarity = Random.Range(0, rarity_length);
+        rng_rarity = Random.Range(0, lootmanager.GetComponent<LootManager>());
+
+        
+
 
         gotable_table = rarity_table.itemrarity[rng_rarity];
         gotable_length = gotable_table.items.Length;
@@ -51,14 +61,6 @@ public class PickPicker : MonoBehaviour {
         string_rarity = "" + gotable_table;
         string_item = "" + item;
         
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	
-
     }
         
 }

@@ -5,11 +5,15 @@ using System.Collections;
 public class LootManager : MonoBehaviour
 {
 
+    
+
+    
+    
     [System.Serializable]
     public class LootTable
     {
         public string name;
-        new public GameObject[] items;
+        public GameObject[] items = new GameObject[3];
     }
 
     [System.Serializable]
@@ -17,6 +21,18 @@ public class LootManager : MonoBehaviour
     {
         public string name;
         new public LootTable [] itemrarity;
+        public int nothing_droprate;
+        public int normal_droprate;
+        public int magic_droprate;
+        public int rare_droprate;
+        public int total_droprate;
+
+        void Start()
+        {
+            total_droprate = normal_droprate + magic_droprate + rare_droprate;
+        }
+        
+
     }
     [System.Serializable]
     public class LootItemType
@@ -32,4 +48,9 @@ public class LootManager : MonoBehaviour
 
 
     new public LootLevel Llvl;
+    
+    
+
 }
+
+

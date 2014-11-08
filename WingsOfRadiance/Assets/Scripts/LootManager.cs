@@ -20,7 +20,7 @@ public class LootManager : MonoBehaviour
     public class LootItemRarity
     {
         public string name;
-        new public LootTable [] itemrarity;
+        public LootTable [] itemrarity;
         public int nothing_droprate;
         public int normal_droprate;
         public int magic_droprate;
@@ -38,16 +38,26 @@ public class LootManager : MonoBehaviour
     public class LootItemType
     {
         public string name;
-        new public LootItemRarity [] itemtype;
+        public LootItemRarity [] itemtype;
+        public int weapon_droprate;
+        public int chassis_droprate;
+        public int computer_droprate;
+        public int engine_droprate;
+        public int scoop_droprate;
+        public int powerplant_droprate;
+        public int medalgem_droprate;
+        public int misc_droprate;
+
+
     }
     [System.Serializable]
     public class LootLevel
     {
-        new public LootItemType[] lootlevel;
+        public LootItemType[] lootlevel;
     }
 
 
-    new public LootLevel Llvl;
+    public LootLevel Llvl;
     
     
 

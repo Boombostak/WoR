@@ -10,7 +10,7 @@ public class PickPicker : MonoBehaviour {
     private int type_length; //the number of types to randomize between
     private int rarity_length; //the number of rarities to randomize between
     private int gotable_length; //the length of the table to choose a GO from
-    new public GameObject item; //the item to choose
+    public GameObject item; //the item to choose
     private int rng_type; //returns the index of the item type
     private int rng_rarity; //returns the index of the items rarity
     private int rng_gotable; //returns the index of the table to roll on
@@ -45,7 +45,7 @@ public class PickPicker : MonoBehaviour {
         
         rarity_table = lvl_table.itemtype[rng_type];
         rarity_length = rarity_table.itemrarity.Length;
-        rng_rarity = Random.Range(0, lootmanager.GetComponent<LootManager>());
+        //rng_rarity = Random.Range(0, lootmanager.GetComponent<LootManager>());
 
         
 
@@ -60,6 +60,8 @@ public class PickPicker : MonoBehaviour {
         string_type = "" + rarity_table;
         string_rarity = "" + gotable_table;
         string_item = "" + item;
+
+        return item;
         
     }
         

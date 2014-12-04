@@ -8,32 +8,52 @@ public class BulletBehaviour : MonoBehaviour
     public static float rof;
     public float firerate;
     public float self_destruct_timer;
-
+    public GameObject lootmanager;
+    public GameObject whattodrop;
+    
 
     // Use this for initialization
-
+    
     void Start()
     {
         rof = 1 / firerate;
         Destroy(gameObject, self_destruct_timer);
+        lootmanager = GameObject.FindGameObjectWithTag("lootmanager");
+        Debug.Log(lootmanager + "is your lootmanager!");
+        
     }
 
-    // Update is called once per frame
+    
+    
+    // Update is called once per frame    
+    
     void Update()
     {
         gameObject.transform.Translate(0, bullet_speed * Time.deltaTime, 0);
     }
 
+    
     void OnTriggerEnter2D(Collider2D othercollider)
     {
         if (othercollider.tag == "enemy")
         {
-            if ((GameObject)othercollider.gameObject.GetComponent<LootDropper>().what_to_drop != null)
+            
+            
+            /*if ((GameObject)othercollider.gameObject.GetComponent<LootDropper>().what_to_drop != null)
             {
                 Instantiate((GameObject)othercollider.gameObject.GetComponent<LootDropper>().what_to_drop, this.transform.position, this.transform.rotation);
+            }*/
+
+            whattodrop = lootmanager.GetComponent<LootManager>().DropAnItem();
+            
+            if (whattodrop != null)
+            {
+                Instantiate(whattodrop);
             }
+            
             Destroy(othercollider.gameObject);
             Destroy(gameObject);
+             
             
         }
             //Debug.Log("hit"+othercollider);

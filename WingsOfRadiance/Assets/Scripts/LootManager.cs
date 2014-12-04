@@ -1,66 +1,71 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public class LootManager : MonoBehaviour {
 
-public class LootManager : MonoBehaviour
-{
+    private GameObject player;
+    private int level_int;
+    private GameObject level_selectionGO;
+    private GameObject itemtype_selectionGO;
+    private GameObject itemrarity_selectionGO;
+    public GameObject droppeditem_selectionGO;
+    public GameObject itemtodrop;
 
+    private GameObject[] playerlevelarray;
+    private GameObject[] itemtypearray;
+    private GameObject[] itemrarityarray;
+    private GameObject[] itemGOarray;
+
+    private int typerng;
+    private int typelength;
+    private int rarityrng;
+    private int raritylength;
+    private int droppeditemrng;
+    private int droppeditemlength;
     
+    // Use this for initialization
+	void Start () {
 
-    
-    
-    [System.Serializable]
-    public class LootTable
-    {
-        public string name;
-        public GameObject[] items = new GameObject[3];
-    }
-
-    [System.Serializable]
-    public class LootItemRarity
-    {
-        public string name;
-        public LootTable [] itemrarity;
-        public int nothing_droprate;
-        public int normal_droprate;
-        public int magic_droprate;
-        public int rare_droprate;
-        public int total_droprate;
-
-        void Start()
-        {
-            total_droprate = normal_droprate + magic_droprate + rare_droprate;
-        }
+        player = GameObject.FindGameObjectWithTag("Player");
+        level_int = player.GetComponent<PlayerLvl>().playerlvl; //Defines the player's level.
         
+        playerlevelarray = new GameObject[this.gameObject.transform.childCount];
+        level_selectionGO = playerlevelarray[level_int]; //Selects the GO associated with the player's level.
+        //Note that player level is 0-indexed. First element is 0.
 
-    }
-    [System.Serializable]
-    public class LootItemType
+        
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+
+    public GameObject DropAnItem()
     {
-        public string name;
-        public LootItemRarity [] itemtype;
-        public int weapon_droprate;
-        public int chassis_droprate;
-        public int computer_droprate;
-        public int engine_droprate;
-        public int scoop_droprate;
-        public int powerplant_droprate;
-        public int medalgem_droprate;
-        public int misc_droprate;
+        itemtypearray = new GameObject[level_selectionGO.transform.childCount];
+        typelength = itemtypearray.Length;
+        typerng = Random.Range(0, typelength);
+        itemtype_selectionGO = itemtypearray[typerng]; //Selects the GO representing item type.
+        
+        itemrarityarray = new GameObject[itemtype_selectionGO.transform.childCount];
+        raritylength = itemrarityarray.Length;
+        rarityrng = Random.Range(0, raritylength);
+        itemrarity_selectionGO = itemrarityarray[rarityrng];
 
+        itemGOarray = new GameObject[itemrarity_selectionGO.transform.childCount];
+        droppeditemlength = itemGOarray.Length;
+        droppeditemrng = Random.Range(0, droppeditemlength);
+        droppeditem_selectionGO = itemGOarray[droppeditemrng];
 
+        /*itemtodrop = droppeditem_selectionGO;
+        
+        typerng = Random.Range(0, typelength);
+        rarityrng = Random.Range(0, raritylength);
+        droppeditemrng = Random.Range(0, droppeditemlength);*/
+
+        return droppeditem_selectionGO;
+        
     }
-    [System.Serializable]
-    public class LootLevel
-    {
-        public LootItemType[] lootlevel;
-    }
-
-
-    public LootLevel Llvl;
-    
-    
-
 }
-
-

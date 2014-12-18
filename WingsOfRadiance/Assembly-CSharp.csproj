@@ -51,7 +51,11 @@
      <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\FindNearestEnemy.cs" />
      <Compile Include="Assets\Scripts\Legacy\LootManager.cs" />
+     <Compile Include="Assets\Scripts\LootItemRarity.cs" />
+     <Compile Include="Assets\Scripts\LootItemType.cs" />
+     <Compile Include="Assets\Scripts\LootLevel.cs" />
      <Compile Include="Assets\Scripts\LootRoller.cs" />
+     <Compile Include="Assets\Scripts\LootTable.cs" />
      <Compile Include="Assets\Scripts\LootWrapperClasses.cs" />
      <Compile Include="Assets\Scripts\PlayerLvl.cs" />
      <Compile Include="Assets\Scripts\enemyspawner.cs" />

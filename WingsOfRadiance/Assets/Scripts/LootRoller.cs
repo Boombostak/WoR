@@ -5,9 +5,9 @@ public class LootRoller : MonoBehaviour {
 
     public GameObject lootmanager;
     public GameObject whattodrop;
-    private LootWrapperClasses.LootItemType[] loottypearray;
-    private LootWrapperClasses.LootItemRarity[] lootrarityarray;
-    private LootWrapperClasses.LootTable[] loottablearray;
+    private LootItemType[] loottypearray;
+    private LootItemRarity[] lootrarityarray;
+    private LootTable[] loottablearray;
     private GameObject[] lootitemsarray;
 
     //randomization
@@ -23,18 +23,18 @@ public class LootRoller : MonoBehaviour {
 
     public GameObject RollLoot()
     {
-        type_length = loottypearray.Length;
+        
         type_rng = Random.Range(0, type_length);
-        rarity_length = lootrarityarray.Length;
+        
         rarity_rng = Random.Range(0, rarity_length);
-        table_length = loottablearray.Length;
+        
         table_rng = Random.Range(0, table_length);
-        items_length = lootitemsarray.Length;
+        
         items_rng = Random.Range(0, items_length);
         
         //lootmanager = GameObject.FindGameObjectWithTag("lootmanager");
         //Debug.Log(lootmanager + "is your lootmanager!");
-        loottypearray = lootmanager.GetComponent<LootWrapperClasses>().Llvl.lootlevel;
+
         lootrarityarray = loottypearray[type_rng].itemtype;
         loottablearray = lootrarityarray[rarity_rng].itemrarity;
         lootitemsarray = loottablearray[table_rng].items;
@@ -54,6 +54,12 @@ public class LootRoller : MonoBehaviour {
 	void Start () {
         lootmanager = GameObject.FindGameObjectWithTag("lootmanager");
         Debug.Log(lootmanager + "is your lootmanager!");
+        type_length = lootmanager.GetComponent<LootLevel>().lootlevel.Length; //loottypearray.Length;
+        rarity_length = lootmanager.GetComponent<LootItemType>().itemtype.Length;  // lootrarityarray.Length;
+        table_length = lootmanager.GetComponent<LootItemRarity>().itemrarity.Length;  //loottablearray.Length;
+        items_length = lootmanager.GetComponent<LootTable>().items.Length;//lootitemsarray.Length;
+        loottypearray = lootmanager.GetComponent<LootLevel>().lootlevel;
+        
 	}
 	
 	// Update is called once per frame

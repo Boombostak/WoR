@@ -5,7 +5,7 @@ using System.Collections;
 public class LootWrapperClasses : MonoBehaviour
 {
 
-    [System.Serializable]
+   /* [System.Serializable]
     public class LootTable
     {
         public string name;
@@ -30,6 +30,6 @@ public class LootWrapperClasses : MonoBehaviour
         public LootItemType[] lootlevel;
     }
 
-
+    */
     public LootLevel Llvl;
 }

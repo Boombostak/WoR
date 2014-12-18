@@ -70,7 +70,7 @@ public class BulletBehaviour : MonoBehaviour
 
             
             destroyed_enemy = othercollider.gameObject;
-            item_to_drop = lootmanager.GetComponent<LootManagerGO>().DropAnItem();
+            item_to_drop = lootmanager.GetComponent<LootManagerGO>().DropAnItem().gameObject;
             Debug.Log("attempted to drop" + item_to_drop);
             Instantiate(item_to_drop, destroyed_enemy.transform.position, destroyed_enemy.transform.rotation);
             Destroy(destroyed_enemy);

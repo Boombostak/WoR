@@ -56,10 +56,11 @@ public class BulletBehaviour : MonoBehaviour
             
             if (whattodrop != null)
             {
-                Instantiate(whattodrop);
+                Debug.Log("dropped(?)" + whattodrop);
+                Instantiate(whattodrop, this.transform.position, this.transform.rotation);
             }
 
-            Debug.Log("tried to drop" + whattodrop);
+            Debug.Log("attempted to drop" + whattodrop);
             Destroy(othercollider.gameObject);
             Destroy(gameObject);
              

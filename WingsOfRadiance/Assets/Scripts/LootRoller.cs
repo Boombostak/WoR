@@ -54,8 +54,8 @@ public class LootRoller : MonoBehaviour {
 	void Start () {
         lootmanager = GameObject.FindGameObjectWithTag("lootmanager");
         Debug.Log(lootmanager + "is your lootmanager!");
-        type_length = lootmanager.GetComponent<LootLevel>().lootlevel.Length; //loottypearray.Length;
-        rarity_length = lootmanager.GetComponent<LootItemType>().itemtype.Length;  // lootrarityarray.Length;
+        type_length = lootmanager.transform.GetChild(0).GetComponent<LootLevel>().lootlevel.Length; //loottypearray.Length;
+        rarity_length = lootmanager.transform.GetChild(0).GetChild(0).GetComponent<LootItemType>().itemtype.Length;  // lootrarityarray.Length;
         table_length = lootmanager.GetComponent<LootItemRarity>().itemrarity.Length;  //loottablearray.Length;
         items_length = lootmanager.GetComponent<LootTable>().items.Length;//lootitemsarray.Length;
         loottypearray = lootmanager.GetComponent<LootLevel>().lootlevel;

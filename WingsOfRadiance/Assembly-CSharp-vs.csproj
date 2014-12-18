@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\LootItemRarity.cs" />
      <Compile Include="Assets\Scripts\LootItemType.cs" />
      <Compile Include="Assets\Scripts\LootLevel.cs" />
+     <Compile Include="Assets\Scripts\LootManagerGO.cs" />
      <Compile Include="Assets\Scripts\LootRoller.cs" />
      <Compile Include="Assets\Scripts\LootTable.cs" />
      <Compile Include="Assets\Scripts\LootWrapperClasses.cs" />

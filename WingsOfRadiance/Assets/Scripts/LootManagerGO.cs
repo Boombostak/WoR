@@ -27,7 +27,7 @@ public class LootManagerGO : MonoBehaviour {
     // Use this for initialization
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
-        level_int = player.GetComponent<PlayerLvl>().playerlvl; //Defines the player's level.
+        level_int = player.GetComponent<PlayerTraits>().playerlvl; //Defines the player's level.
 
         //playerlevelarray = new GameObject[this.gameObject.transform.childCount];
         level_selectionGO = this.transform.GetChild(level_int).gameObject;

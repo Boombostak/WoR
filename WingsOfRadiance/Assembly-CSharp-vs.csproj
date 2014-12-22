@@ -57,10 +57,10 @@
      <Compile Include="Assets\Scripts\Legacy\LootItemType.cs" />
      <Compile Include="Assets\Scripts\Legacy\LootLevel.cs" />
      <Compile Include="Assets\Scripts\Legacy\LootManager.cs" />
-     <Compile Include="Assets\Scripts\Legacy\LootTable.cs" />
      <Compile Include="Assets\Scripts\Legacy\LootWrapperClasses.cs" />
      <Compile Include="Assets\Scripts\LootManagerGO.cs" />
      <Compile Include="Assets\Scripts\LootRoller.cs" />
+     <Compile Include="Assets\Scripts\LootTable.cs" />
      <Compile Include="Assets\Scripts\PlayerLvl.cs" />
      <Compile Include="Assets\Scripts\PlayerTraits.cs" />
      <Compile Include="Assets\Scripts\enemyspawner.cs" />

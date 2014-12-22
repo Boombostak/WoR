@@ -11,6 +11,7 @@ public class LootManagerGO : MonoBehaviour {
     private GameObject itemrarity_selectionGO;
     public GameObject droppeditem_selectionGO;
     public GameObject itemtodrop;
+    private GameObject[] loottable;
 
     /*private GameObject[] playerlevelarray;
     private GameObject[] itemtypearray;
@@ -56,7 +57,9 @@ public class LootManagerGO : MonoBehaviour {
         //itemGOarray = new GameObject[itemrarity_selectionGO.transform.childCount];
         //droppeditemlength = itemGOarray.Length;
         //droppeditemrng = Random.Range(0, droppeditemlength);
-        droppeditem_selectionGO = itemrarity_selectionGO.transform.GetChild(Random.Range(0, itemrarity_selectionGO.transform.childCount)).gameObject;
+        //droppeditem_selectionGO = itemrarity_selectionGO.transform.GetChild(Random.Range(0, itemrarity_selectionGO.transform.childCount)).gameObject;
+        loottable = itemrarity_selectionGO.GetComponent<LootTable>().items;
+        droppeditem_selectionGO = loottable[Random.Range(0, loottable.Length)];
         Debug.Log(droppeditem_selectionGO);
         /*itemtodrop = droppeditem_selectionGO;
         

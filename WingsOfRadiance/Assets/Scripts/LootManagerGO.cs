@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Reflection;
 
 public class LootManagerGO : MonoBehaviour {
 
@@ -9,7 +10,8 @@ public class LootManagerGO : MonoBehaviour {
     private GameObject level_selectionGO;
     private GameObject itemtype_selectionGO;
     private GameObject itemrarity_selectionGO;
-    public GameObject droppeditem_selectionGO;
+    private GameObject droppeditem_selectionGO;
+    public GameObject thing_to_spawn;
     public GameObject itemtodrop;
     private GameObject[] loottable;
 
@@ -24,6 +26,13 @@ public class LootManagerGO : MonoBehaviour {
     private int raritylength;
     private int droppeditemrng;
     private int droppeditemlength;
+
+    public GameObject[] affix_GO_array;
+    public int affix_rng;
+    public GameObject affix_GO;
+    public AffixScript affix;
+    public Component affix_component;
+    
     
     // Use this for initialization
 	void Start () {
@@ -61,13 +70,43 @@ public class LootManagerGO : MonoBehaviour {
         loottable = itemrarity_selectionGO.GetComponent<LootTable>().items;
         droppeditem_selectionGO = loottable[Random.Range(0, loottable.Length)];
         Debug.Log(droppeditem_selectionGO);
+
+        if (itemrarity_selectionGO.name == "magic")
+        {
+            Debug.Log("magic item rolled, applying affix");
+            AddAffix();
+        }
+        
         /*itemtodrop = droppeditem_selectionGO;
         
         typerng = Random.Range(0, typelength);
         rarityrng = Random.Range(0, raritylength);
         droppeditemrng = Random.Range(0, droppeditemlength);*/
 
-        return droppeditem_selectionGO;
+        thing_to_spawn = droppeditem_selectionGO;
+        return thing_to_spawn;
+
+    }
+
+    public void ComponentWrapper()
+    {
+
+    }
+
+    public void AddAffix()
+    {
+        thing_to_spawn.AddComponent<AffixScript>();
+        affix_rng = Random.Range(0, affix_GO_array.Length);
+        affix_GO = affix_GO_array[affix_rng];
+        affix_component = affix_GO.GetComponent<AffixScript>();
+
+        foreach (FieldInfo fi in thing_to_spawn.GetComponent<AffixScript>().GetType().GetFields())
+        {
+            fi.SetValue(thing_to_spawn.GetComponents<AffixScript>(), fi.GetValue(affix_component));
+        }
+
+        Debug.Log("Your affix is" + thing_to_spawn.GetComponent<AffixScript>().teststring);
+        
 
     }
 }

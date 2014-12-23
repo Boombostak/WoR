@@ -13,12 +13,12 @@ public class PlayerTraits : MonoBehaviour {
     public int playerlvl;
     public int mass_max;
     public int energy_max;
-    public float damage_reduction;
-    public float damage_bonus;
-    public float avoid_chance;
-    public float mass_absorbtion;
-    public float energy_absorbtion;
-    public float bounty_collection;
+    public int damage_reduction;
+    public int damage_bonus;
+    public int avoid_chance;
+    public int mass_absorbtion;
+    public int energy_absorbtion;
+    public int bounty_collection;
 
     public float dps;
 

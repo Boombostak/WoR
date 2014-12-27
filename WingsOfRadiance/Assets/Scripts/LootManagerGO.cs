@@ -11,14 +11,10 @@ public class LootManagerGO : MonoBehaviour {
     private GameObject itemtype_selectionGO;
     private GameObject itemrarity_selectionGO;
     private GameObject droppeditem_selectionGO;
+    private GameObject clone_to_spawn;
     public GameObject thing_to_spawn;
     public GameObject itemtodrop;
     private GameObject[] loottable;
-
-    /*private GameObject[] playerlevelarray;
-    private GameObject[] itemtypearray;
-    private GameObject[] itemrarityarray;
-    private GameObject[] itemGOarray;*/
 
     private int typerng;
     private int typelength;
@@ -36,12 +32,11 @@ public class LootManagerGO : MonoBehaviour {
     
     // Use this for initialization
 	void Start () {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player"); //Finds player GO.
         level_int = player.GetComponent<PlayerTraits>().playerlvl; //Defines the player's level.
-
-        //playerlevelarray = new GameObject[this.gameObject.transform.childCount];
         level_selectionGO = this.transform.GetChild(level_int).gameObject;
-        Debug.Log(level_selectionGO);
+        //Debug.Log(level_selectionGO);
+        thing_to_spawn = new GameObject();
 
 	}
 	
@@ -54,59 +49,51 @@ public class LootManagerGO : MonoBehaviour {
     {
         itemtype_selectionGO = level_selectionGO.transform.GetChild(Random.Range (0,level_selectionGO.transform.childCount)).gameObject;
         Debug.Log(itemtype_selectionGO);
-        //typelength = itemtypearray.Length;
-        //typerng = Random.Range(0, typelength);
-        //itemtype_selectionGO = itemtypearray[typerng]; //Selects the GO representing item type.
-
-        //itemrarityarray = new GameObject[itemtype_selectionGO.transform.childCount];
-        //raritylength = itemrarityarray.Length;
-        //rarityrng = Random.Range(0, raritylength);
         itemrarity_selectionGO = itemtype_selectionGO.transform.GetChild(Random.Range(0, itemtype_selectionGO.transform.childCount)).gameObject;
         Debug.Log(itemrarity_selectionGO);
-        //itemGOarray = new GameObject[itemrarity_selectionGO.transform.childCount];
-        //droppeditemlength = itemGOarray.Length;
-        //droppeditemrng = Random.Range(0, droppeditemlength);
-        //droppeditem_selectionGO = itemrarity_selectionGO.transform.GetChild(Random.Range(0, itemrarity_selectionGO.transform.childCount)).gameObject;
         loottable = itemrarity_selectionGO.GetComponent<LootTable>().items;
         droppeditem_selectionGO = loottable[Random.Range(0, loottable.Length)];
-        Debug.Log(droppeditem_selectionGO);
+        clone_to_spawn = Instantiate (droppeditem_selectionGO, transform.position, transform.rotation) as GameObject;
+        clone_to_spawn.SetActive(false);
+        //Debug.Log(droppeditem_selectionGO);
 
         if (itemrarity_selectionGO.name == "magic")
         {
-            Debug.Log("magic item rolled, applying affix");
+            //Debug.Log("magic item rolled, applying affix");
             AddAffix();
         }
-        
-        /*itemtodrop = droppeditem_selectionGO;
-        
-        typerng = Random.Range(0, typelength);
-        rarityrng = Random.Range(0, raritylength);
-        droppeditemrng = Random.Range(0, droppeditemlength);*/
 
-        thing_to_spawn = droppeditem_selectionGO;
+        thing_to_spawn = clone_to_spawn;
+        thing_to_spawn.SetActive(true);
+        Destroy(clone_to_spawn);
         return thing_to_spawn;
-
-    }
-
-    public void ComponentWrapper()
-    {
 
     }
 
     public void AddAffix()
     {
-        thing_to_spawn.AddComponent<AffixScript>();
         affix_rng = Random.Range(0, affix_GO_array.Length);
         affix_GO = affix_GO_array[affix_rng];
         affix_component = affix_GO.GetComponent<AffixScript>();
+        CopyComponent(affix_component, clone_to_spawn);
+        (affix_component as MonoBehaviour).enabled = true;
+        Debug.Log("Your affix is" + clone_to_spawn.GetComponent<AffixScript>().teststring);
+    }
 
-        foreach (FieldInfo fi in thing_to_spawn.GetComponent<AffixScript>().GetType().GetFields())
-        {
-            fi.SetValue(thing_to_spawn.GetComponents<AffixScript>(), fi.GetValue(affix_component));
-        }
+     public Component CopyComponent(Component original, GameObject destination)
+    {
+     System.Type type = original.GetType();
+     Component copy = destination.AddComponent(type);
+     // Copied fields can be restricted with BindingFlags
+     System.Reflection.FieldInfo[] fields = type.GetFields(); 
+     foreach (System.Reflection.FieldInfo field in fields)
+     {
+        field.SetValue(copy, field.GetValue(original));
+     }
+     return copy;
+    }
 
-        Debug.Log("Your affix is" + thing_to_spawn.GetComponent<AffixScript>().teststring);
+        
         
 
     }
-}

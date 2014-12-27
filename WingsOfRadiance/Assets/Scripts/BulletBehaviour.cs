@@ -4,14 +4,18 @@ using System.Collections;
 public class BulletBehaviour : MonoBehaviour
 {
 
+    public int damage;
     public float bullet_speed;
     public static float rof;
     public float firerate;
     public float self_destruct_timer;
+    public GameObject hit_enemy;
+    public EnemyBehaviour enemy_script;
+    private int enemy_health;
     public GameObject destroyed_enemy;
     public GameObject item_to_drop;
     
-    public GameObject lootmanager;
+    public static GameObject lootmanager;
     /*public GameObject whattodrop;
     public LootWrapperClasses.LootItemType[] loottypearray;
     public LootWrapperClasses.LootItemRarity[] lootrarityarray;
@@ -47,36 +51,16 @@ public class BulletBehaviour : MonoBehaviour
     {
         if (othercollider.tag == "enemy")
         {
+            hit_enemy = othercollider.gameObject;
+            enemy_script = hit_enemy.GetComponent<EnemyBehaviour>();
             
-            
-            /*if ((GameObject)othercollider.gameObject.GetComponent<LootDropper>().what_to_drop != null)
+            if (enemy_script.health >= 1)
             {
-                Instantiate((GameObject)othercollider.gameObject.GetComponent<LootDropper>().what_to_drop, this.transform.position, this.transform.rotation);
-            }*/
-
-            /*destroyed_enemy = othercollider.gameObject;
-            loottypearray = lootmanager.GetComponent<LootWrapperClasses>().Llvl.lootlevel;
-            lootrarityarray = loottypearray[0].itemtype;
-            loottablearray = lootrarityarray[0].itemrarity;
-            lootitemsarray = loottablearray[0].items;
-            whattodrop = lootitemsarray[0];
+                enemy_script.health -= damage;
+            }
             
-            if (whattodrop != null)
-            {
-                
-                Debug.Log("dropped(?)" + whattodrop);
-                Instantiate(whattodrop, this.transform.position, this.transform.rotation);
-            }*/
-
             
-            destroyed_enemy = othercollider.gameObject;
-            item_to_drop = lootmanager.GetComponent<LootManagerGO>().DropAnItem().gameObject;
-            Debug.Log("attempted to drop" + item_to_drop);
-            Instantiate(item_to_drop, destroyed_enemy.transform.position, destroyed_enemy.transform.rotation);
-            Destroy(destroyed_enemy);
-            Destroy(gameObject);
-             
-            
+            Destroy(gameObject); 
         }
             //Debug.Log("hit"+othercollider);
     }

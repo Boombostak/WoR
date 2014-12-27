@@ -17,7 +17,7 @@ public class enemyspawner : MonoBehaviour {
         countdown = countdown - Time.deltaTime;
         if (countdown <= 0)
         {
-            GameObject.Instantiate (thing_to_spawn);
+            GameObject.Instantiate (thing_to_spawn, this.transform.position, this.transform.rotation);
             countdown = time_between_spawns;
         }
 	

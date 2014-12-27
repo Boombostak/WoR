@@ -28,6 +28,11 @@ public class LootManagerGO : MonoBehaviour {
     public GameObject affix_GO;
     public AffixScript affix;
     public Component affix_component;
+
+    private GameObject rarity_indicator_prefab;
+    private GameObject rarity_indicator_instance;
+    public GameObject magic_rarity_prefab;
+    public GameObject rare_rarity_prefab;
     
     
     // Use this for initialization
@@ -59,17 +64,32 @@ public class LootManagerGO : MonoBehaviour {
 
         if (itemrarity_selectionGO.name == "magic")
         {
+            rarity_indicator_prefab = magic_rarity_prefab;
+            AddRarityIndicator();
             //Debug.Log("magic item rolled, applying affix");
             AddAffix();
+            
         }
+
+        if (itemrarity_selectionGO.name == "rare")
+        {
+            rarity_indicator_prefab = rare_rarity_prefab;
+            AddRarityIndicator();
+            //Debug.Log("magic item rolled, applying affix");
+            AddAffix();
+
+        }
+        
 
         thing_to_spawn = clone_to_spawn;
         thing_to_spawn.SetActive(true);
+        rarity_indicator_prefab = null;
         Destroy(clone_to_spawn);
         return thing_to_spawn;
 
     }
 
+    //adds an AffixScript to the obect.
     public void AddAffix()
     {
         affix_rng = Random.Range(0, affix_GO_array.Length);
@@ -80,7 +100,20 @@ public class LootManagerGO : MonoBehaviour {
         Debug.Log("Your affix is" + clone_to_spawn.GetComponent<AffixScript>().teststring);
     }
 
-     public Component CopyComponent(Component original, GameObject destination)
+    
+    //Adds a child object to the drop which visually indicates its rarity.
+    public void AddRarityIndicator()
+    {
+        if (rarity_indicator_prefab != null)
+        {
+            rarity_indicator_instance = Instantiate(rarity_indicator_prefab, thing_to_spawn.transform.position, thing_to_spawn.transform.rotation) as GameObject;
+            rarity_indicator_instance.transform.parent = thing_to_spawn.transform;
+        }
+        
+    }
+    
+    //copies the fields of a component and adds a duplicate component to a gameobject
+    public Component CopyComponent(Component original, GameObject destination)
     {
      System.Type type = original.GetType();
      Component copy = destination.AddComponent(type);

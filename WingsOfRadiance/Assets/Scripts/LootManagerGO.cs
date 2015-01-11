@@ -62,13 +62,19 @@ public class LootManagerGO : MonoBehaviour {
         clone_to_spawn.SetActive(false);
         //Debug.Log(droppeditem_selectionGO);
 
+        
+        
+
+        thing_to_spawn = Instantiate(clone_to_spawn) as GameObject;
+        thing_to_spawn.SetActive(true);
+        
         if (itemrarity_selectionGO.name == "magic")
         {
             rarity_indicator_prefab = magic_rarity_prefab;
             AddRarityIndicator();
             //Debug.Log("magic item rolled, applying affix");
             AddAffix();
-            
+
         }
 
         if (itemrarity_selectionGO.name == "rare")
@@ -79,14 +85,9 @@ public class LootManagerGO : MonoBehaviour {
             AddAffix();
 
         }
-        
-
-        thing_to_spawn = clone_to_spawn;
-        thing_to_spawn.SetActive(true);
         rarity_indicator_prefab = null;
         Destroy(clone_to_spawn);
         return thing_to_spawn;
-
     }
 
     //adds an AffixScript to the obect.
@@ -106,8 +107,11 @@ public class LootManagerGO : MonoBehaviour {
     {
         if (rarity_indicator_prefab != null)
         {
-            rarity_indicator_instance = Instantiate(rarity_indicator_prefab, thing_to_spawn.transform.position, thing_to_spawn.transform.rotation) as GameObject;
-            rarity_indicator_instance.transform.parent = thing_to_spawn.transform;
+            rarity_indicator_instance = Instantiate(rarity_indicator_prefab) as GameObject;
+            
+            Instantiate(rarity_indicator_instance, thing_to_spawn.transform.position, thing_to_spawn.transform.rotation);
+            rarity_indicator_instance.transform.SetParent(thing_to_spawn.transform, true);
+            
         }
         
     }

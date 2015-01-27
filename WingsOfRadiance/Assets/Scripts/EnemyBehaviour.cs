@@ -31,6 +31,7 @@ public class EnemyBehaviour : MonoBehaviour {
             item_to_drop = lootmanager.GetComponent<LootManagerGO>().DropAnItem().gameObject;
             Debug.Log("attempted to drop" + item_to_drop);
             Instantiate(item_to_drop, this.transform.position, this.transform.rotation);
+            Destroy(lootmanager.GetComponent<LootManagerGO>().thing_to_spawn);
             Destroy(this.gameObject);
         }
         

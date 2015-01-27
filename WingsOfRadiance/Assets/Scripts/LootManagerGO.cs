@@ -58,7 +58,7 @@ public class LootManagerGO : MonoBehaviour {
         Debug.Log(itemrarity_selectionGO);
         loottable = itemrarity_selectionGO.GetComponent<LootTable>().items;
         droppeditem_selectionGO = loottable[Random.Range(0, loottable.Length)];
-        clone_to_spawn = Instantiate (droppeditem_selectionGO, transform.position, transform.rotation) as GameObject;
+        /*clone_to_spawn = Instantiate (droppeditem_selectionGO, transform.position, transform.rotation) as GameObject;
         clone_to_spawn.SetActive(false);
         //Debug.Log(droppeditem_selectionGO);
 
@@ -66,7 +66,8 @@ public class LootManagerGO : MonoBehaviour {
         
 
         thing_to_spawn = Instantiate(clone_to_spawn) as GameObject;
-        thing_to_spawn.SetActive(true);
+        thing_to_spawn.SetActive(true);*/
+        thing_to_spawn = Instantiate(droppeditem_selectionGO, transform.position, transform.rotation) as GameObject;
         
         if (itemrarity_selectionGO.name == "magic")
         {
@@ -86,7 +87,7 @@ public class LootManagerGO : MonoBehaviour {
 
         }
         rarity_indicator_prefab = null;
-        Destroy(clone_to_spawn);
+        //Destroy(clone_to_spawn);
         return thing_to_spawn;
     }
 
@@ -96,9 +97,9 @@ public class LootManagerGO : MonoBehaviour {
         affix_rng = Random.Range(0, affix_GO_array.Length);
         affix_GO = affix_GO_array[affix_rng];
         affix_component = affix_GO.GetComponent<AffixScript>();
-        CopyComponent(affix_component, clone_to_spawn);
+        CopyComponent(affix_component, thing_to_spawn);
         (affix_component as MonoBehaviour).enabled = true;
-        Debug.Log("Your affix is" + clone_to_spawn.GetComponent<AffixScript>().teststring);
+        Debug.Log("Your affix is" + thing_to_spawn.GetComponent<AffixScript>().teststring);
     }
 
     

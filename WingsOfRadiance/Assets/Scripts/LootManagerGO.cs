@@ -101,7 +101,7 @@ public class LootManagerGO : MonoBehaviour {
         if (itemrarity_selectionGO.name == "magic")
         {
             rarity_indicator_prefab = magic_rarity_prefab;
-            AddRarityIndicator(where);
+            AddRarityIndicator(where, thing_to_spawn);
             //Debug.Log("magic item rolled, applying affix");
             AddAffix();
 
@@ -110,7 +110,7 @@ public class LootManagerGO : MonoBehaviour {
         if (itemrarity_selectionGO.name == "rare")
         {
             rarity_indicator_prefab = rare_rarity_prefab;
-            AddRarityIndicator(where);
+            AddRarityIndicator(where, thing_to_spawn);
             //Debug.Log("magic item rolled, applying affix");
             AddAffix();
 
@@ -133,14 +133,15 @@ public class LootManagerGO : MonoBehaviour {
 
     
     //Adds a child object to the drop which visually indicates its rarity.
-    public void AddRarityIndicator(Transform where)
+    public void AddRarityIndicator(Transform where, GameObject parent)
     {
         if (rarity_indicator_prefab != null)
         {
             rarity_indicator_instance = Instantiate(rarity_indicator_prefab) as GameObject;
             
-            Instantiate(rarity_indicator_instance, where.transform.position, where.transform.rotation);
-            rarity_indicator_instance.transform.SetParent(thing_to_spawn.transform, true);
+            //Instantiate(rarity_indicator_instance, where.transform.position, where.transform.rotation);
+            //rarity_indicator_instance.transform.SetParent(thing_to_spawn.transform, false);
+            rarity_indicator_instance.transform.parent = parent.transform;
             rarity_indicator_instance.transform.localPosition = Vector3.zero;
             
         }

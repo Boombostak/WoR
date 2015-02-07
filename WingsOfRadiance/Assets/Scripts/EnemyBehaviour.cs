@@ -28,7 +28,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
         if (health < 1)
         {
-            item_to_drop = lootmanager.GetComponent<LootManagerGO>().DropAnItem().gameObject;
+            item_to_drop = lootmanager.GetComponent<LootManagerGO>().DropAnItem(this.transform).gameObject;
             Debug.Log("attempted to drop" + item_to_drop);
             Instantiate(item_to_drop, this.transform.position, this.transform.rotation);
             Destroy(lootmanager.GetComponent<LootManagerGO>().thing_to_spawn);

@@ -18,6 +18,12 @@ public class CardinalSplineGenerator : MonoBehaviour
     public bool lock3;
     public bool lock2;
     public int line_renderer_verts = 20;
+    public GameObject farGO;
+    public GameObject midGO;
+    public GameObject nearGO;
+    public FindNearestEnemy farFNE;
+    public FindNearestEnemy midFNE;
+    public FindNearestEnemy nearFNE;
 
 
     // Use this for initialization
@@ -26,11 +32,14 @@ public class CardinalSplineGenerator : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         alignmentvector.x = alignmentbias;
         alignmentvector.y = 1;
-        controlpoints = new GameObject[num_points];
-        for (int i = 0; i < num_points; i++)
+        controlpoints[0].transform.parent = player.transform;
+        controlpoints[1].transform.parent = player.transform;
+
+        //controlpoints = new GameObject[num_points];
+        /*for (int i = 0; i < num_points; i++)
         {
             controlpoints[i] = (GameObject)Instantiate(cp_prefab);
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -43,48 +52,63 @@ public class CardinalSplineGenerator : MonoBehaviour
     public void ConstructControlPoints()
     {
  
-        controlpoints[0].transform.position = player.transform.position;
-        controlpoints[1].transform.position = player.transform.position;
+      //controlpoints[0].transform.position = player.transform.position;
+      //controlpoints[1].transform.position = player.transform.position;
+        
+        farGO = controlpoints[4];
+        midGO = controlpoints[3];
+        nearGO = controlpoints[2];
+        farFNE = farGO.GetComponent<FindNearestEnemy>();
+        midFNE = farGO.GetComponent<FindNearestEnemy>();
+        nearFNE = farGO.GetComponent<FindNearestEnemy>();
 
-        //controlpoint 4
-        if (controlpoints[4].GetComponent<FindNearestEnemy>().distance < controlpoints[4].GetComponent<FindNearestEnemy>().mindist)
+        //controlpoint 4 aka far
+        if ((farFNE.distance < farFNE.mindist) 
+            && (farFNE.closest != null)
+            &&(farFNE.closest.activeInHierarchy == true))
         {
-            controlpoints[4].transform.position = GetComponent<FindNearestEnemy>().closest.transform.position;
+            farGO.transform.position = farFNE.closest.transform.position;
             lock5 = true;
         }
         else
         {
-            controlpoints[5].transform.position = player.transform.position + alignmentvector + alignmentvector + alignmentvector;
+            farGO.transform.position = player.transform.position + alignmentvector + alignmentvector + alignmentvector;
+            lock5 = false;
         }
 
         //controlpoint 5 follows 4
-        controlpoints[5].transform.position = controlpoints[4].transform.position;
+        controlpoints[5].transform.position = farGO.transform.position;
 
 
-        //controlpoint 3
-        if (controlpoints[3].GetComponent<FindNearestEnemy>().distance < controlpoints[3].GetComponent<FindNearestEnemy>().mindist
-            && lock5 == true)
+        //controlpoint 3 aka mid
+        if ((midFNE.distance < midFNE.mindist)
+            && (lock5 == true) && 
+            (midFNE.closest != null)
+            && midFNE.closest.activeInHierarchy == true)
         {
-            controlpoints[3].transform.position = GetComponent<FindNearestEnemy>().closest.transform.position;
+            midGO.transform.position = midFNE.closest.transform.position;
             lock4 = true;
         }
         else
         {
-            controlpoints[3].transform.position = player.transform.position + alignmentvector + alignmentvector;
+            midGO.transform.position = player.transform.position + alignmentvector + alignmentvector;
+            lock4 = false;
         }
 
 
-        //controlpoint 2
-        if (controlpoints[2].GetComponent<FindNearestEnemy>().distance < controlpoints[3].GetComponent<FindNearestEnemy>().mindist
-            && lock5 == true
-            && lock4 == true)
+        //controlpoint 2 aka near
+        if ((nearFNE.distance < nearFNE.mindist)
+            && (lock5 == true)
+            && (lock4 == true)
+            && nearFNE.closest.activeInHierarchy == true)
         {
-            controlpoints[2].transform.position = GetComponent<FindNearestEnemy>().closest.transform.position;
+            nearGO.transform.position = nearFNE.closest.transform.position;
             lock3 = true;
         }
         else
         {
-            controlpoints[2].transform.position = player.transform.position + alignmentvector;
+            farGO.transform.position = player.transform.position + alignmentvector;
+            lock3 =false;
         }
 
 
@@ -163,6 +187,6 @@ public class CardinalSplineGenerator : MonoBehaviour
     void Update()
     {
         ConstructControlPoints();
-        DrawCurve();
+        //DrawCurve();
     }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CardinalSplineGenerator : MonoBehaviour
+public class SplineCPConstructor : MonoBehaviour
 {
 
     //P_sub_i = ((P_sub_i + 1)-(P_sub_i - 1))/alpha
@@ -16,7 +16,7 @@ public class CardinalSplineGenerator : MonoBehaviour
     public bool lock5;
     public bool lock4;
     public bool lock3;
-    public bool lock2;
+    //public bool lock2;
     public int line_renderer_verts = 20;
     public GameObject farGO;
     public GameObject midGO;
@@ -25,15 +25,28 @@ public class CardinalSplineGenerator : MonoBehaviour
     public FindNearestEnemy midFNE;
     public FindNearestEnemy nearFNE;
 
+    public GameObject spline_object;
+    public GameObject[] collider_object_array;
+    public int number_of_objects = 20; //equivalent to line_renderer_verts
+    public GameObject currentcollider;
+
 
     // Use this for initialization
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         alignmentvector.x = alignmentbias;
-        alignmentvector.y = 1;
         controlpoints[0].transform.parent = player.transform;
+        controlpoints[0].transform.localPosition = new Vector3(0,0,0);
         controlpoints[1].transform.parent = player.transform;
+        controlpoints[1].transform.localPosition = new Vector3(0, 0, 0);
+
+        collider_object_array = new GameObject[20];
+        for (int i = 0; i < collider_object_array.Length; i++)
+        {
+            collider_object_array[i] = GameObject.Instantiate(spline_object) as GameObject;
+            
+        }
 
         //controlpoints = new GameObject[num_points];
         /*for (int i = 0; i < num_points; i++)
@@ -59,8 +72,8 @@ public class CardinalSplineGenerator : MonoBehaviour
         midGO = controlpoints[3];
         nearGO = controlpoints[2];
         farFNE = farGO.GetComponent<FindNearestEnemy>();
-        midFNE = farGO.GetComponent<FindNearestEnemy>();
-        nearFNE = farGO.GetComponent<FindNearestEnemy>();
+        midFNE = midGO.GetComponent<FindNearestEnemy>();
+        nearFNE = nearGO.GetComponent<FindNearestEnemy>();
 
         //controlpoint 4 aka far
         if ((farFNE.distance < farFNE.mindist) 
@@ -82,9 +95,10 @@ public class CardinalSplineGenerator : MonoBehaviour
 
         //controlpoint 3 aka mid
         if ((midFNE.distance < midFNE.mindist)
-            && (lock5 == true) && 
-            (midFNE.closest != null)
-            && midFNE.closest.activeInHierarchy == true)
+            && (lock5 == true) 
+            && (midFNE.closest != null)
+            && (midFNE.closest.activeInHierarchy == true)
+            && (midFNE != farFNE))
         {
             midGO.transform.position = midFNE.closest.transform.position;
             lock4 = true;
@@ -100,24 +114,29 @@ public class CardinalSplineGenerator : MonoBehaviour
         if ((nearFNE.distance < nearFNE.mindist)
             && (lock5 == true)
             && (lock4 == true)
-            && nearFNE.closest.activeInHierarchy == true)
+            && (nearFNE.closest != null)
+            && (nearFNE.closest.activeInHierarchy == true)
+            && (nearFNE != farFNE)
+            && (nearFNE != midFNE))
         {
             nearGO.transform.position = nearFNE.closest.transform.position;
             lock3 = true;
         }
         else
         {
-            farGO.transform.position = player.transform.position + alignmentvector;
+            nearGO.transform.position = player.transform.position + alignmentvector;
             lock3 =false;
         }
 
 
     }
 
+    //unused
     public void DrawCurve()
     {
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.SetVertexCount(line_renderer_verts);
+
         // set points of Hermite curve
         Vector3 p0;
         Vector3 p1;
@@ -162,24 +181,22 @@ public class CardinalSplineGenerator : MonoBehaviour
                 - controlpoints[j].transform.position;
             }
 
-            if (j==controlpoints.Length -2)
+            if (j == controlpoints.Length - 2)
             {
-                pointstep = 1 / (line_renderer_verts - 1f);
+                pointstep = 1f / (line_renderer_verts - 1f);
             }
+
+            //Line Renderer
 
             for (int i = 0; i < line_renderer_verts; i++)
             {
-                t = i *pointstep;
-                position.x = (2.0f * t * t * t - 3.0f * t * t + 1) * p0.x
-                   + (t * t * t - 2.0f * t * t + t) * m0.x
-                   + (-2.0f * t * t * t + 3.0f * t * t) * p1.x
-                   + (t * t * t - t * t) * m1.x;
-                position.y = (2f * t * t * t - 3f * t * t + 1) * p0.y
-                  + (t * t * t - 2f * t * t + t) * m0.y
-                  + (-2f * t * t * t + 3f * t * t) * p1.y
-                  + (t * t * t - t * t) * m1.y;
-                position.z = 0f;
+                t = i * pointstep;
+                position = (2.0f * t * t * t - 3.0f * t * t + 1) * p0
+                   + (t * t * t - 2.0f * t * t + t) * m0
+                   + (-2.0f * t * t * t + 3.0f * t * t) * p1
+                   + (t * t * t - t * t) * m1;
                 lineRenderer.SetPosition(i, position);
+                collider_object_array[i].transform.position.Set(position.x, position.y, position.z);
             }
         }
     }

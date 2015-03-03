@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyBehaviour : MonoBehaviour {
+public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
 
     public float speed;
     private Vector3 movement;
@@ -32,10 +32,20 @@ public class EnemyBehaviour : MonoBehaviour {
             Debug.Log("attempted to drop" + item_to_drop);
             Instantiate(item_to_drop, this.transform.position, this.transform.rotation);
             Destroy(lootmanager.GetComponent<LootManagerGO>().thing_to_spawn);
-            Destroy(this.gameObject);
+            DestroyThis();
         }
         
         
         
 	}
+
+    public void DamageThis(int damage)
+    {
+
+    }
+
+    public void DestroyThis()
+    {
+        Destroy(this.gameObject);
+    }
 }

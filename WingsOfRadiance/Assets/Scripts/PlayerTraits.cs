@@ -15,6 +15,8 @@ public class PlayerTraits : MonoBehaviour {
     public int energy_max;
     public int damage_reduction;
     public int damage_bonus;
+    public float damage_multiplier;
+    public float rof_multiplier;
     public int avoid_chance;
     public int mass_absorbtion;
     public int energy_absorbtion;

@@ -4,6 +4,8 @@ using System.Collections;
 public class Weapon : MonoBehaviour
 {
 
+    public GameObject[] shot_origins;
+    
     public int basedamage;
     public float floatdamage;
     public int finaldamage;
@@ -24,7 +26,8 @@ public class Weapon : MonoBehaviour
 
     void Awake()
     {
-        proj_instance = Instantiate(projectile) as Projectile;
+        proj_instance = projectile;
+        //proj_instance = Instantiate(projectile) as Projectile;
     }
     
     void Start()
@@ -69,7 +72,10 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
-            Instantiate(proj_instance, this.transform.position, this.transform.rotation);
+        foreach (GameObject i in shot_origins)
+        {
+            Instantiate(proj_instance, i.transform.position, i.transform.rotation);
+        }
             shot_countup = 0;
     }
 }

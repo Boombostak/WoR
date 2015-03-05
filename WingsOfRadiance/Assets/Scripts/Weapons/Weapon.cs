@@ -7,10 +7,13 @@ public class Weapon : MonoBehaviour
     public int basedamage;
     public float floatdamage;
     public int finaldamage;
+    public float base_proj_speed;
+    public float final_proj_speed;
     private float shot_delay;
     public float baserof;
     public float finalrof; //shots per second
-    public GameObject projectile;
+    public Projectile projectile;
+    public Projectile proj_instance;
     public GameObject player;
     public PlayerTraits playertraits;
     private float shot_countup = 0f;
@@ -19,6 +22,11 @@ public class Weapon : MonoBehaviour
     public float finaldps;
     public string shootbutton;
 
+    void Awake()
+    {
+        proj_instance = Instantiate(projectile) as Projectile;
+    }
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -30,11 +38,17 @@ public class Weapon : MonoBehaviour
         basedps = baserof * (float)basedamage;
         finaldps = finalrof * (float)finaldamage;
 
-        if (this.transform.gameObject == player.transform.GetChild(0).gameObject)
-	{
-        shootbutton = "Fire1";
-	}
-        if (this.transform == player.transform.GetChild(1))
+        proj_instance.damage = finaldamage;
+        proj_instance.speed = final_proj_speed;
+
+        
+
+        if (this.transform == player.transform.GetChild(1).GetChild(0))
+	    {
+            shootbutton = "Fire1";
+	    }
+        
+        if (this.transform == player.transform.GetChild(1).GetChild(1))
         {
             shootbutton = "Fire2";
         }

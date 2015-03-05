@@ -20,8 +20,8 @@ public class PlayerEquipped : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         weapon1GO = Instantiate(weapon1) as GameObject;
         weapon2GO = Instantiate(weapon2) as GameObject;
-        weapon1GO.transform.SetParent(player.transform);
-        weapon2GO.transform.SetParent(player.transform);
+        weapon1GO.transform.SetParent(player.transform.GetChild(1));
+        weapon2GO.transform.SetParent(player.transform.GetChild(1));
 	}
 	
 	// Update is called once per frame

@@ -36,9 +36,9 @@ public class SplineCPConstructor : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         alignmentvector.x = alignmentbias;
-        controlpoints[0].transform.parent = player.transform;
+        controlpoints[0].transform.parent = player.transform.GetChild(0);
         controlpoints[0].transform.localPosition = new Vector3(0,0,0);
-        controlpoints[1].transform.parent = player.transform;
+        controlpoints[1].transform.parent = player.transform.GetChild(0);
         controlpoints[1].transform.localPosition = new Vector3(0, 0, 0);
 
         collider_object_array = new GameObject[20];

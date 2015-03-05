@@ -4,12 +4,14 @@ using System.Collections;
 public class Weapon : MonoBehaviour
 {
 
+    public GameObject[] projectilespershot;
     public int basedamage;
     public float floatdamage;
     public int finaldamage;
     private float shot_delay;
     public float baserof;
     public float finalrof; //shots per second
+    public float projectile_speed;
     public GameObject projectile;
     public GameObject player;
     public PlayerTraits playertraits;
@@ -19,6 +21,14 @@ public class Weapon : MonoBehaviour
     public float finaldps;
     public string shootbutton;
 
+    public Weapon projweap = new Weapon();
+
+    void Awake()
+    {
+        projweap = this;
+        projectile.GetComponent<Projectile>().weapon = projweap;
+    }
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -27,8 +37,8 @@ public class Weapon : MonoBehaviour
         finaldamage = (int)floatdamage;
         finalrof = baserof * playertraits.rof_multiplier;
         shot_delay = 1 / finalrof;
-        basedps = baserof * (float)basedamage;
-        finaldps = finalrof * (float)finaldamage;
+        basedps = baserof * (float)basedamage * (float)projectilespershot.Length;
+        finaldps = finalrof * (float)finaldamage * (float)projectilespershot.Length;
 
         if (this.transform.gameObject == player.transform.GetChild(0).gameObject)
 	{
@@ -38,6 +48,8 @@ public class Weapon : MonoBehaviour
         {
             shootbutton = "Fire2";
         }
+
+        
         
     }
 

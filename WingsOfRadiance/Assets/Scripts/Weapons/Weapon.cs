@@ -33,6 +33,7 @@ public class Weapon : MonoBehaviour
         playertraits = player.GetComponent<PlayerTraits>();
         floatdamage = (float)basedamage * playertraits.damage_multiplier + (float)playertraits.damage_bonus;
         finaldamage = (int)floatdamage;
+        final_proj_speed = base_proj_speed * 1;//playertrait not set up
         finalrof = baserof * playertraits.rof_multiplier;
         shot_delay = 1 / finalrof;
         basedps = baserof * (float)basedamage;
@@ -68,7 +69,7 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
-            Instantiate(projectile, this.transform.position, this.transform.rotation);
+            Instantiate(proj_instance, this.transform.position, this.transform.rotation);
             shot_countup = 0;
     }
 }

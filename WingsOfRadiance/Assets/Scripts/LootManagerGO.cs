@@ -161,8 +161,4 @@ public class LootManagerGO : MonoBehaviour {
      }
      return copy;
     }
-
-        
-        
-
-    }
+}

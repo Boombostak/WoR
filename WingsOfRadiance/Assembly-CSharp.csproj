@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\PlayerTraits.cs" />
      <Compile Include="Assets\Scripts\SplineCPConstructor.cs" />
      <Compile Include="Assets\Scripts\SplineObjectPosition.cs" />
+     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
      <Compile Include="Assets\Scripts\Weapons\HomingMissile.cs" />
      <Compile Include="Assets\Scripts\Weapons\Missile.cs" />
      <Compile Include="Assets\Scripts\Weapons\Projectile.cs" />

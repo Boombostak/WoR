@@ -56,5 +56,10 @@ public class player_shooting : MonoBehaviour
         }
         //Debug.Log(shot_countdown);
         //Debug.Log(Time.time);
+
+        if (Input.GetButton("InGameMenu"))
+        {
+            
+        }
 	}
 }

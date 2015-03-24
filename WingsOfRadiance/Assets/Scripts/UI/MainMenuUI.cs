@@ -3,16 +3,6 @@ using System.Collections;
 
 public class MainMenuUI : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public void NewGame()
     {
 
@@ -20,7 +10,7 @@ public class MainMenuUI : MonoBehaviour {
 
     public void Quit()
     {
-
+        Application.Quit();
     }
 
     public void LoadGame()
@@ -30,6 +20,6 @@ public class MainMenuUI : MonoBehaviour {
 
     public void Options()
     {
-
+        
     }
 }

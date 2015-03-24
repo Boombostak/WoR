@@ -5,6 +5,8 @@ public class Weapon : MonoBehaviour
 {
 
     public GameObject[] shot_origins;
+    public int hardpoints;
+    public int originmax;
     
     public int basedamage;
     public float floatdamage;
@@ -56,6 +58,23 @@ public class Weapon : MonoBehaviour
         {
             shootbutton = "Fire2";
         }
+
+        hardpoints = player.transform.Find("hardpoints").childCount;
+
+        if (hardpoints > shot_origins.Length)
+        {
+            originmax = shot_origins.Length;
+        }
+        else
+        {
+            originmax = hardpoints;
+        }
+
+        for (int i = 0; i < originmax; i++)
+        {
+            shot_origins[i].transform.parent = player.transform.Find("hardpoints").GetChild(i);
+            shot_origins[i].transform.localPosition = Vector3.zero;
+        }
         
     }
 
@@ -78,4 +97,6 @@ public class Weapon : MonoBehaviour
         }
             shot_countup = 0;
     }
+
+    //consider replacing with a nested for loop that makes each shot origin a child of the player's hardpoints in order
 }

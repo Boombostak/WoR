@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[System.Serializable]
 public class PlayerTraits : MonoBehaviour {
 
     //basic stats
@@ -23,15 +24,4 @@ public class PlayerTraits : MonoBehaviour {
     public int bounty_collection;
 
     public float dps;
-
-    
-    // Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

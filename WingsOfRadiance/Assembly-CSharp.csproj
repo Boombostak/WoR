@@ -64,6 +64,8 @@
      <Compile Include="Assets\Scripts\PlayerEquipped.cs" />
      <Compile Include="Assets\Scripts\PlayerLvl.cs" />
      <Compile Include="Assets\Scripts\PlayerTraits.cs" />
+     <Compile Include="Assets\Scripts\SaveLoad\GameState.cs" />
+     <Compile Include="Assets\Scripts\SaveLoad\SaveLoad.cs" />
      <Compile Include="Assets\Scripts\SplineCPConstructor.cs" />
      <Compile Include="Assets\Scripts\SplineObjectPosition.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />

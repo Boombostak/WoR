@@ -33,5 +33,4 @@ public class Missile {
         }
         //Debug.Log("hit"+othercollider);
     }
-y
 }

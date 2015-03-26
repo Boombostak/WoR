@@ -4,6 +4,7 @@ using System.Collections;
 [System.Serializable]
 public class PlayerTraits : MonoBehaviour {
 
+    public string name;
     //basic stats
     public int xp;
     public int credits;
@@ -22,6 +23,7 @@ public class PlayerTraits : MonoBehaviour {
     public int mass_absorbtion;
     public int energy_absorbtion;
     public int bounty_collection;
+    //reputation
 
     public float dps;
 }

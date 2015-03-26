@@ -5,7 +5,7 @@ public class MainMenuUI : MonoBehaviour {
 
     public void NewGame()
     {
-
+        GameState.current = new GameState();
     }
 
     public void Quit()
@@ -15,7 +15,7 @@ public class MainMenuUI : MonoBehaviour {
 
     public void LoadGame()
     {
-
+        SaveLoad.Load();
     }
 
     public void Options()

@@ -4,12 +4,13 @@ using System.Collections;
 [System.Serializable]
 public class GameState : MonoBehaviour {
 
-    public static GameState current;
-    public PlayerTraits playertraits;
+    public static GameState currentGS;
+    public static PlayerTraits currentPT;
 
     public GameState()
     {
-        playertraits = new PlayerTraits();
+        currentGS = new GameState();
+        currentPT = new PlayerTraits();
     }
 
 }

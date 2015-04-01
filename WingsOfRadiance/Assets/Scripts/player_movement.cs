@@ -8,6 +8,7 @@ public class player_movement : MonoBehaviour {
     private float x_dir;
     private float y_dir;
     private Vector3 movement;
+    public Vector3 movement_return;
     public bool analogue_controls; //whether the controls are analogue or, if false, digital
 
     
@@ -37,6 +38,8 @@ public class player_movement : MonoBehaviour {
             movement.Normalize(); 
         }
         movement = movement * speed * Time.deltaTime;
+
+        movement_return = movement;
         
         transform.Translate(movement);
         

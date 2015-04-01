@@ -11,7 +11,7 @@ public static class SaveLoad
 
     public static void Save()
     {
-        savedgames.Add(GameState.current);
+        savedgames.Add(GameState.currentGS);
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/savedgames.wor");
         bf.Serialize(file, SaveLoad.savedgames);

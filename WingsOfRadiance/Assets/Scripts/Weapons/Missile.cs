@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Missile {
+public class Missile : MonoBehaviour{
 
     public int damage;
     public float speed;

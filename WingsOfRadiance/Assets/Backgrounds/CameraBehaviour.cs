@@ -4,22 +4,47 @@ using System.Collections;
 public class CameraBehaviour : MonoBehaviour
 {
 
+    public bool TATE;
     public Camera camera;
     public SpriteRenderer backgroundrenderer;
-    public Bounds background_snapshot;
+    public static Bounds background_snapshot;
     public player_movement playermovement;
+    public GameObject player;
+    private float xmin;
+    private float xmax;
+    public Vector3 cameramovement;
+    public float halfrect;
 
-    void Start()
+    void Awake()
     {
         camera = this.GetComponent<Camera>();
+        
         background_snapshot = backgroundrenderer.bounds;
+        xmin = background_snapshot.min.x;
+        xmax = background_snapshot.max.x;
+
+        if (TATE)
+        {
+            
+            //halfrect = camera.ViewportToWorldPoint / 2f;
+        }
+        else
+        {
+            //halfrect = camera.ViewportToWorldPoint / 2f;
+        }
+    }
+    
+    void Start()
+    {
     }
 
     void Update()
     {
-        camera.transform.Translate(playermovement.movement_return.x / 2, 0, 0);
-        Mathf.Clamp(camera.rect.xMin, background_snapshot.min.x, (background_snapshot.max.x - camera.rect.x));
-        Mathf.Clamp(camera.rect.xMax, (background_snapshot.min.x + camera.rect.width), background_snapshot.max.x);
+        cameramovement = playermovement.movement_return / 2f;
+        camera.transform.Translate(cameramovement);
+        camera.transform.position = new Vector3((Mathf.Clamp(camera.transform.position.x, -3, 3)),
+            Mathf.Clamp(camera.transform.position.y, 0,0),
+            camera.transform.position.z);
     }
 
 

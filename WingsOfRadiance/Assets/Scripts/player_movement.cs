@@ -10,11 +10,30 @@ public class player_movement : MonoBehaviour {
     private Vector3 movement;
     public Vector3 movement_return;
     public bool analogue_controls; //whether the controls are analogue or, if false, digital
+    
+    //clamping
+    public float positionmin;
+    public float positionmax;
+    public Camera camera;
+    public Vector3 bottomleftworldcoordinates;
+    public Vector3 toprightworldcoordinates;
+    public Vector3 movementrangemin;
+    public Vector3 movementrangemax;
+    public GameObject player;
 
     
 
 // Use this for initialization
+
+
+    void Awake()
+    {
+        
+    }
+
 	void Start () {
+        //positionmin = CameraBehaviour.background_snapshot.min.x;
+        //positionmax = CameraBehaviour.background_snapshot.max.x;
         
 	}
 	
@@ -37,11 +56,19 @@ public class player_movement : MonoBehaviour {
         { 
             movement.Normalize(); 
         }
-        movement = movement * speed * Time.deltaTime;
 
-        movement_return = movement;
-        
+
+        bottomleftworldcoordinates = camera.ViewportToWorldPoint(Vector3.zero);
+        toprightworldcoordinates = camera.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        movementrangemin = bottomleftworldcoordinates + this.renderer.bounds.extents;
+        movementrangemax = toprightworldcoordinates - this.renderer.bounds.extents;
+        movement = movement * speed * Time.deltaTime;
         transform.Translate(movement);
+        this.transform.position = new Vector3(Mathf.Clamp(this.transform.position.x, movementrangemin.x, movementrangemax.x), 
+            Mathf.Clamp(this.transform.position.y, movementrangemin.y, movementrangemax.y), 
+            this.transform.position.z);
+        movement.y = Mathf.Clamp(this.transform.position.y, movementrangemin.y, movementrangemax.y);
+        movement_return = movement;
         
         //Debug.Log(movement.magnitude);
 

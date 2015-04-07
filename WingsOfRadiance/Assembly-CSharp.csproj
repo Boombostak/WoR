@@ -48,12 +48,15 @@
   <ItemGroup>
      <Compile Include="Assets\Backgrounds\CameraBehaviour.cs" />
      <Compile Include="Assets\Loot\AffixScript.cs" />
+     <Compile Include="Assets\Loot\ItemBehaviour.cs" />
      <Compile Include="Assets\ObjectPool\Scripts\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\BackgroundBehaviour.cs" />
      <Compile Include="Assets\Scripts\BulletBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Cleanup.cs" />
      <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\FindNearestEnemy.cs" />
      <Compile Include="Assets\Scripts\Interfaces\Interfaces.cs" />
+     <Compile Include="Assets\Scripts\Inventory.cs" />
      <Compile Include="Assets\Scripts\Legacy\LootItemRarity.cs" />
      <Compile Include="Assets\Scripts\Legacy\LootItemType.cs" />
      <Compile Include="Assets\Scripts\Legacy\LootLevel.cs" />

@@ -128,7 +128,7 @@ public class LootManagerGO : MonoBehaviour {
         affix_component = affix_GO.GetComponent<AffixScript>();
         CopyComponent(affix_component, thing_to_spawn);
         (affix_component as MonoBehaviour).enabled = true;
-        Debug.Log("Your affix is" + thing_to_spawn.GetComponent<AffixScript>().teststring);
+        //Debug.Log("Your affix is" + thing_to_spawn.GetComponent<AffixScript>().teststring);
     }
 
     

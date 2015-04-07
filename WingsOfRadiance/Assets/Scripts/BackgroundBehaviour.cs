@@ -21,6 +21,11 @@ public class BackgroundBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         this.transform.Translate(0, -scrollspeed * Time.deltaTime, 0);
+
+        if (this.transform.position.y < -25f)
+        {
+            Destroy(this.gameObject);
+        }
 	}
 
     void OnBecameVisible()

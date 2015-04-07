@@ -81,7 +81,7 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         shot_countup += Time.deltaTime;
-        Debug.Log(shot_countup);
+        //Debug.Log(shot_countup);
         
         if ((Input.GetButton(shootbutton)) && (shot_countup > shot_delay))
         {

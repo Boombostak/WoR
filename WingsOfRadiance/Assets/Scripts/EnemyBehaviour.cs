@@ -11,11 +11,14 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
     public GameObject explosion;
     public GameObject item_to_drop;
     public static GameObject lootmanager;
+    public int dropchance = 30;
+    public int drop_rng;
 
     // Use this for initialization
 	void Start () {
         lootmanager = GameObject.FindGameObjectWithTag("lootmanager");
-        Debug.Log(lootmanager + "is your lootmanager!");
+        //Debug.Log(lootmanager + "is your lootmanager!");
+        drop_rng = Random.Range(0, 100);
 	
 	}
 	
@@ -28,10 +31,13 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
 
         if (health < 1)
         {
+            if (drop_rng < dropchance)
+            {
             item_to_drop = lootmanager.GetComponent<LootManagerGO>().DropAnItem(this.transform);
             Debug.Log("attempted to drop" + item_to_drop);
             Instantiate(item_to_drop, this.transform.position, this.transform.rotation);
-            Destroy(lootmanager.GetComponent<LootManagerGO>().thing_to_spawn);
+            Destroy(lootmanager.GetComponent<LootManagerGO>().thing_to_spawn); 
+            }
             DestroyThis();
         }
         

@@ -12,11 +12,13 @@ public class ItemBehaviour : MonoBehaviour {
     public int size;
     public float lifetime;
     public float countup = 0;
+    public Color itemcolor;
     
     void Start()
     {
         itemvector = new Vector3(Random.Range(-1f,1f), Random.Range(-1f,1f), 0f);
         inventory = GameObject.FindGameObjectWithTag("inventory").GetComponent<Inventory>();
+        itemcolor = this.GetComponent<SpriteRenderer>().color;
         StartCoroutine(ItemTimer());
     }
     
@@ -33,8 +35,21 @@ public class ItemBehaviour : MonoBehaviour {
     IEnumerator ItemTimer()
     {
         for (float timer = lifetime; timer >= 0; timer -= Time.deltaTime)
+            if (timer<1f)
+            {
+                StartCoroutine(ItemBlink());
+            }
             yield return 0;
             Destroy(this.gameObject);
+    }
+
+    IEnumerator ItemBlink()
+    {
+        for (float blinktimer = 0f; blinktimer < 1f; blinktimer += Time.deltaTime)
+            itemcolor = Color.white;
+            yield return new WaitForSeconds(0.1f);
+            itemcolor = new Color (1 - itemcolor.r, 1 - itemcolor.g, 1 - itemcolor.b);
+            yield return new WaitForSeconds(0.1f);
     }
 
     void OnTriggerEnter2D(Collider2D othercollider)

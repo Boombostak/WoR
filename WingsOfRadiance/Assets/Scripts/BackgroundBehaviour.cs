@@ -11,6 +11,7 @@ public class BackgroundBehaviour : MonoBehaviour {
     public GameObject bg_selection;
     public float scrollspeed = 10;
     public Vector3 offset;
+    bool hasrunonce = false;
     
     // Use this for initialization
 	void Start () {
@@ -19,18 +20,35 @@ public class BackgroundBehaviour : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
         this.transform.Translate(0, -scrollspeed * Time.deltaTime, 0);
 
         if (this.transform.position.y < -25f)
         {
             Destroy(this.gameObject);
         }
-	}
 
-    void OnBecameVisible()
+        if (this.transform.position.y > -25f && this.transform.position.y <0)
+        {
+            SpawnBG();
+        }
+    }
+
+    public void SpawnBG()
+    {
+        if (!hasrunonce)
+        {
+            hasrunonce = true;
+            offset = new Vector3(0, this.transform.position.y + this.GetComponent<SpriteRenderer>().bounds.size.y, 0);
+            Instantiate(bg_selection, offset, this.transform.rotation);
+        }
+        
+    }
+
+    /*void OnBecameVisible() //deprecated
     {
         offset = new Vector3(0, this.transform.position.y + this.GetComponent<SpriteRenderer>().bounds.size.y, 0);
         Instantiate(bg_selection, offset, this.transform.rotation);
-    }
+    }*/
 }

@@ -10,11 +10,14 @@ public class ItemBehaviour : MonoBehaviour {
     public Inventory inventory;
     public GameObject currentitem;
     public int size;
+    public float lifetime;
+    public float countup = 0;
     
     void Start()
     {
         itemvector = new Vector3(Random.Range(-1f,1f), Random.Range(-1f,1f), 0f);
         inventory = GameObject.FindGameObjectWithTag("inventory").GetComponent<Inventory>();
+        ItemTimer();
     }
     
     void ItemMove()
@@ -29,7 +32,12 @@ public class ItemBehaviour : MonoBehaviour {
 
     void ItemTimer()
     {
-
+        float lt = lifetime;
+        countup += Time.deltaTime;
+        if (countup >= lt)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D othercollider)
@@ -50,5 +58,6 @@ public class ItemBehaviour : MonoBehaviour {
     void Update()
     {
         ItemMove();
+        ItemTimer();
     }
 }

@@ -25,5 +25,15 @@ public class Inventory : MonoBehaviour {
     public void AddItem(GameObject item)
     {
         contents.Add(item);
+        RecountStorage();
+    }
+
+    public void RecountStorage()
+    {
+        storage = 0;
+        foreach (GameObject i in contents)
+        {
+            storage += i.GetComponent<ItemBehaviour>().size;
+        }
     }
 }

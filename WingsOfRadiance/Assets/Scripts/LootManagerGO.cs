@@ -82,9 +82,9 @@ public class LootManagerGO : MonoBehaviour {
     public GameObject DropAnItem(Transform where)
     {
         itemtype_selectionGO = level_selectionGO.transform.GetChild(Random.Range (0,level_selectionGO.transform.childCount)).gameObject;
-        Debug.Log(itemtype_selectionGO);
+        //Debug.Log(itemtype_selectionGO);
         itemrarity_selectionGO = itemtype_selectionGO.transform.GetChild(Random.Range(0, itemtype_selectionGO.transform.childCount)).gameObject;
-        Debug.Log(itemrarity_selectionGO);
+        //Debug.Log(itemrarity_selectionGO);
         loottable = itemrarity_selectionGO.GetComponent<LootTable>().items;
         droppeditem_selectionGO = loottable[Random.Range(0, loottable.Length)];
         /*clone_to_spawn = Instantiate (droppeditem_selectionGO, transform.position, transform.rotation) as GameObject;
@@ -117,8 +117,12 @@ public class LootManagerGO : MonoBehaviour {
         }
         rarity_indicator_prefab = null;
         //Destroy(clone_to_spawn);
+        thing_to_spawn.GetComponent<SocketScript>().AddSockets(level_int); //nulref exceptions spawn too many drops!
+        Debug.Log("levelint " +level_int);
         return thing_to_spawn;
     }
+
+
 
     //adds an AffixScript to the obect.
     public void AddAffix()

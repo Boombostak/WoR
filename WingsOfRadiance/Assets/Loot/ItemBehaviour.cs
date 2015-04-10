@@ -19,7 +19,7 @@ public class ItemBehaviour : MonoBehaviour {
         itemvector = new Vector3(Random.Range(-1f,1f), Random.Range(-1f,1f), 0f);
         inventory = GameObject.FindGameObjectWithTag("inventory").GetComponent<Inventory>();
         itemcolor = this.GetComponent<SpriteRenderer>().color;
-        StartCoroutine(ItemTimer());
+        //StartCoroutine(ItemTimer());
     }
     
     void ItemMove()
@@ -32,31 +32,32 @@ public class ItemBehaviour : MonoBehaviour {
         
     }
 
-    IEnumerator ItemTimer()
+    //FIGURE THIS OUT! COROUTINES!
+    /*IEnumerator ItemTimer()
     {
         for (float timer = lifetime; timer >= 0; timer -= Time.deltaTime)
-            if (timer<1f)
+            if (timer<=1f)
             {
-                StartCoroutine(ItemBlink());
+                //StartCoroutine(ItemBlink());
             }
-            yield return 0;
             Destroy(this.gameObject);
+            yield return null;
     }
 
     IEnumerator ItemBlink()
     {
-        for (float blinktimer = 0f; blinktimer < 1f; blinktimer += Time.deltaTime)
-            itemcolor = Color.white;
+        for (float blinktimer = 1f; blinktimer >= 1f; blinktimer -= 0.1f)
+            //itemcolor = Color.white;
+            //yield return new WaitForSeconds(0.1f);
+            //itemcolor = new Color (1f - itemcolor.r, 1f - itemcolor.g, 1f - itemcolor.b);
             yield return new WaitForSeconds(0.1f);
-            itemcolor = new Color (1 - itemcolor.r, 1 - itemcolor.g, 1 - itemcolor.b);
-            yield return new WaitForSeconds(0.1f);
-    }
+    }*/
 
     void OnTriggerEnter2D(Collider2D othercollider)
     {
         if (othercollider.tag == "Player")
         {
-            Debug.Log("item touched player");
+            //Debug.Log("item touched player");
             inventory.AddItem(this.gameObject);
             this.gameObject.SetActive(false);
         }
@@ -70,6 +71,6 @@ public class ItemBehaviour : MonoBehaviour {
     void Update()
     {
         ItemMove();
-        ItemTimer();
+        //ItemTimer();
     }
 }

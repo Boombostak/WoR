@@ -28,7 +28,7 @@ public class FindNearestEnemy : MonoBehaviour
                 distance = curDistance;
             }
         }
-        Debug.Log(closest);
+        //Debug.Log(closest);
         return closest;
         
     }

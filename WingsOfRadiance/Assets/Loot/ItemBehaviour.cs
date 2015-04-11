@@ -4,12 +4,13 @@ using System.Collections;
 public class ItemBehaviour : MonoBehaviour {
 
     //Moves items, reflects them off camera bounds, deletes them after a time limit, allows player to pick up.
+    //Should also handle inventory interactions.
 
     public Vector3 itemvector;
     public float speed = 0.05f;
     public Inventory inventory;
     public GameObject currentitem;
-    public int size;
+    public int size; //for inventory
     public float lifetime;
     public float countup = 0;
     public Color itemcolor;
@@ -57,9 +58,13 @@ public class ItemBehaviour : MonoBehaviour {
     {
         if (othercollider.tag == "Player")
         {
+            bool full =  false;
             //Debug.Log("item touched player");
-            inventory.AddItem(this.gameObject);
-            this.gameObject.SetActive(false);
+            full = inventory.AddItem(this.gameObject);
+            if (!full)
+            {
+                this.gameObject.SetActive(false);
+            }
         }
     }
     

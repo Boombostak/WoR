@@ -22,10 +22,22 @@ public class Inventory : MonoBehaviour {
 	
 	}
 
-    public void AddItem(GameObject item)
+    public bool AddItem(GameObject item)
     {
-        contents.Add(item);
-        RecountStorage();
+        bool noroom;
+        if (storage + item.GetComponent<ItemBehaviour>().size <= maxstorage)
+        {
+            contents.Add(item);
+            noroom = false;
+            RecountStorage();
+        }
+        else
+        {
+            noroom = true;
+            Debug.Log("Inventory full!");
+        }
+
+        return noroom;
     }
 
     public void RecountStorage()

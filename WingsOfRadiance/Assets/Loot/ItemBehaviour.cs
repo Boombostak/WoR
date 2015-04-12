@@ -14,13 +14,17 @@ public class ItemBehaviour : MonoBehaviour {
     public float lifetime;
     //public float countup = 0;
     public Color itemcolor;
+    public bool isblinking = false;
     
     void Start()
     {
         itemvector = new Vector3(Random.Range(-1f,1f), Random.Range(-1f,1f), 0f);
         inventory = GameObject.FindGameObjectWithTag("inventory").GetComponent<Inventory>();
         itemcolor = this.GetComponent<SpriteRenderer>().color;
-        StartCoroutine(ItemTimer());
+        if (Application.loadedLevelName == "test")//this prevents timers from running in inventory scenes
+        {
+            StartCoroutine(ItemTimer());
+        }
     }
     
     void ItemMove()
@@ -39,14 +43,17 @@ public class ItemBehaviour : MonoBehaviour {
     {
         float timer = lifetime;
         Debug.Log("timer"+ timer);
-        while (timer > 1f)
+        while (timer > 2f)
         {
             timer -= Time.deltaTime;
             yield return null;
         }
-        while (timer <= 1f && timer > 0)
+        while (timer <= 2f && timer > 0)
         {
-            StartCoroutine(ItemBlink());
+            if (isblinking == false)
+            {
+                StartCoroutine(ItemBlink());
+            }
             timer -= Time.deltaTime;
             yield return null;
         }
@@ -61,6 +68,8 @@ public class ItemBehaviour : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.2f);
         this.renderer.enabled = !this.renderer.enabled;
+        isblinking = true;
+        Debug.Log("called itemblink)");
     }
 
     void OnTriggerEnter2D(Collider2D othercollider)
@@ -76,15 +85,9 @@ public class ItemBehaviour : MonoBehaviour {
             }
         }
     }
-    
-    void ItemPickup()
-    {
-
-    }
 
     void Update()
     {
         ItemMove();
-        //ItemTimer();
     }
 }

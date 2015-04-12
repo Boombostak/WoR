@@ -12,7 +12,7 @@ public class ItemBehaviour : MonoBehaviour {
     public GameObject currentitem;
     public int size; //for inventory
     public float lifetime;
-    public float countup = 0;
+    //public float countup = 0;
     public Color itemcolor;
     
     void Start()
@@ -20,7 +20,7 @@ public class ItemBehaviour : MonoBehaviour {
         itemvector = new Vector3(Random.Range(-1f,1f), Random.Range(-1f,1f), 0f);
         inventory = GameObject.FindGameObjectWithTag("inventory").GetComponent<Inventory>();
         itemcolor = this.GetComponent<SpriteRenderer>().color;
-        //StartCoroutine(ItemTimer());
+        StartCoroutine(ItemTimer());
     }
     
     void ItemMove()
@@ -34,25 +34,34 @@ public class ItemBehaviour : MonoBehaviour {
     }
 
     //FIGURE THIS OUT! COROUTINES!
-    /*IEnumerator ItemTimer()
+    //Works now!
+    IEnumerator ItemTimer()
     {
-        for (float timer = lifetime; timer >= 0; timer -= Time.deltaTime)
-            if (timer<=1f)
-            {
-                //StartCoroutine(ItemBlink());
-            }
+        float timer = lifetime;
+        Debug.Log("timer"+ timer);
+        while (timer > 1f)
+        {
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+        while (timer <= 1f && timer > 0)
+        {
+            StartCoroutine(ItemBlink());
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+        while (timer <= 0f)
+        {
             Destroy(this.gameObject);
             yield return null;
+        }
     }
 
     IEnumerator ItemBlink()
     {
-        for (float blinktimer = 1f; blinktimer >= 1f; blinktimer -= 0.1f)
-            //itemcolor = Color.white;
-            //yield return new WaitForSeconds(0.1f);
-            //itemcolor = new Color (1f - itemcolor.r, 1f - itemcolor.g, 1f - itemcolor.b);
-            yield return new WaitForSeconds(0.1f);
-    }*/
+        yield return new WaitForSeconds(0.2f);
+        this.renderer.enabled = !this.renderer.enabled;
+    }
 
     void OnTriggerEnter2D(Collider2D othercollider)
     {

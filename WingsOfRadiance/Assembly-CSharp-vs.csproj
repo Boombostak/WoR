@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Backgrounds\CameraBehaviour.cs" />
-     <Compile Include="Assets\Enemies\EnemyWeapons\EnemyWeapon.cs" />
      <Compile Include="Assets\Loot\AffixScript.cs" />
      <Compile Include="Assets\Loot\ItemBehaviour.cs" />
      <Compile Include="Assets\Loot\SocketGO.cs" />

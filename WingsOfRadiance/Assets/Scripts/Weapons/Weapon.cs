@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
     public float baserof;
     public float finalrof; //shots per second
     public Projectile projectile;
-    private Projectile proj_instance;
+    public Projectile proj_instance;
     public GameObject player;
     public PlayerTraits playertraits;
     private float shot_countup = 0f;

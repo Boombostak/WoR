@@ -56,6 +56,8 @@
      <Compile Include="Assets\Scripts\BulletBehaviour.cs" />
      <Compile Include="Assets\Scripts\Cleanup.cs" />
      <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
+     <Compile Include="Assets\Scripts\EnemyManagerGO.cs" />
+     <Compile Include="Assets\Scripts\EnemyTable.cs" />
      <Compile Include="Assets\Scripts\FindNearestEnemy.cs" />
      <Compile Include="Assets\Scripts\Interfaces\Interfaces.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />

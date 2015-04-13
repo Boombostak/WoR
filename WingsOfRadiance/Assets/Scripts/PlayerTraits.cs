@@ -13,7 +13,7 @@ public class PlayerTraits : MonoBehaviour {
     public int tech_skill;
     //derived stats
     public int playerlvl;
-    public int mass_max;
+    public int matter_max;
     public int energy_max;
     public int damage_reduction;
     public int damage_bonus;
@@ -24,6 +24,18 @@ public class PlayerTraits : MonoBehaviour {
     public int energy_absorbtion;
     public int bounty_collection;
     //reputation
+    public int currentmatter;
+    public int currentenergy;
 
     public float dps;
+
+    void Start()
+    {
+        currentmatter = matter_max;
+        currentenergy = energy_max;
+    }
+    
+    void Update()
+    {
+    }
 }

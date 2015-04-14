@@ -10,7 +10,7 @@ public class EnemyProjectile : MonoBehaviour {
 
     void Start()
     {
-
+        this.gameObject.CreatePool();
     }
 
     void Update()
@@ -29,7 +29,7 @@ public class EnemyProjectile : MonoBehaviour {
             {
                 enemy_script.currentmatter -= damage;
             }
-            Destroy(this.gameObject);
+            this.gameObject.Recycle();
         }
         //Debug.Log("hit"+othercollider);
     }

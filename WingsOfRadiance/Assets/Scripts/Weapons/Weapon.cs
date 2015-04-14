@@ -29,6 +29,7 @@ public class Weapon : MonoBehaviour
     void Awake()
     {
         proj_instance = projectile;
+        proj_instance.CreatePool();
         //proj_instance = Instantiate(projectile) as Projectile;
     }
     
@@ -93,7 +94,7 @@ public class Weapon : MonoBehaviour
     {
         foreach (GameObject i in shot_origins)
         {
-            Instantiate(proj_instance, i.transform.position, i.transform.rotation);
+            proj_instance.Spawn(i.transform.position, i.transform.rotation);
         }
             shot_countup = 0;
     }

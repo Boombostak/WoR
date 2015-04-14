@@ -68,7 +68,7 @@ public class EnemyWeapon : MonoBehaviour
     {
         foreach (GameObject i in shot_origins)
         {
-            Instantiate(proj_instance, i.transform.position, i.transform.rotation);
+            proj_instance.Spawn(i.transform.position, i.transform.rotation);
         }
         shot_countup = 0;
     }

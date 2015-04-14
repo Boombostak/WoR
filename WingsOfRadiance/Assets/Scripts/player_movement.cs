@@ -21,6 +21,7 @@ public class player_movement : MonoBehaviour {
     public Vector3 movementrangemax;
     public GameObject player;
 
+
     
 
 // Use this for initialization

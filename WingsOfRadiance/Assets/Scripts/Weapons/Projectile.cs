@@ -29,7 +29,7 @@ public class Projectile : MonoBehaviour {
             {
                 enemy_script.health -= damage;
             }
-            Destroy(this.gameObject);
+            this.gameObject.Recycle();
         }
         //Debug.Log("hit"+othercollider);
     }

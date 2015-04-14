@@ -37,5 +37,14 @@ public class PlayerTraits : MonoBehaviour {
     
     void Update()
     {
+        if (currentmatter < 1)
+        {
+            PlayerDied();
+        }
+    }
+
+    void PlayerDied()
+    {
+        Debug.Log("Player has died");
     }
 }

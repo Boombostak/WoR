@@ -52,6 +52,7 @@
      <Compile Include="Assets\Enemies\EnemyMovementPatterns\EMSine.cs" />
      <Compile Include="Assets\Enemies\EnemyWeapons\EnemyProjectiles\EnemyProjectile.cs" />
      <Compile Include="Assets\EnemyWeapon.cs" />
+     <Compile Include="Assets\ExperienceTable.cs" />
      <Compile Include="Assets\Loot\AffixScript.cs" />
      <Compile Include="Assets\Loot\ItemBehaviour.cs" />
      <Compile Include="Assets\Loot\SocketGO.cs" />
@@ -77,6 +78,7 @@
      <Compile Include="Assets\Scripts\PlayerEquipped.cs" />
      <Compile Include="Assets\Scripts\PlayerLvl.cs" />
      <Compile Include="Assets\Scripts\PlayerTraits.cs" />
+     <Compile Include="Assets\Scripts\PlayerUtility.cs" />
      <Compile Include="Assets\Scripts\SaveLoad\GameState.cs" />
      <Compile Include="Assets\Scripts\SaveLoad\SaveLoad.cs" />
      <Compile Include="Assets\Scripts\SplineCPConstructor.cs" />

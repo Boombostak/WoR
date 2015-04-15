@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Backgrounds\CameraBehaviour.cs" />
+     <Compile Include="Assets\Enemies\EnemyMovementPatterns\EMChase.cs" />
+     <Compile Include="Assets\Enemies\EnemyMovementPatterns\EMForward.cs" />
+     <Compile Include="Assets\Enemies\EnemyMovementPatterns\EMSine.cs" />
      <Compile Include="Assets\Enemies\EnemyWeapons\EnemyProjectiles\EnemyProjectile.cs" />
      <Compile Include="Assets\EnemyWeapon.cs" />
      <Compile Include="Assets\Loot\AffixScript.cs" />

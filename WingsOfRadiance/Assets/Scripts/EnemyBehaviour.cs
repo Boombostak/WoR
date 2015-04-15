@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
 
     public float speed;
+    public float speed_multiplier = 1;
     private Vector3 movement;
     private Vector3 spawnpoint;
     public int health = 1;
@@ -15,20 +16,19 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
     public int drop_rng;
 
     public string movement_pattern_string;
-    public float sine_formula_x;
-    public float sine_formula_y;
+    public float sineamplitude;
 
     // Use this for initialization
 	void Start () {
         lootmanager = GameObject.FindGameObjectWithTag("lootmanager");
         //Debug.Log(lootmanager + "is your lootmanager!");
         drop_rng = UnityEngine.Random.Range(0, 100);
+        speed = speed * speed_multiplier;
+        AddMovePattern(movement_pattern_string);
 	}
 	
 	// Update is called once per frame
     void Update () {
-
-        Move(movement_pattern_string);
 
         if (health < 1)
         {
@@ -56,18 +56,19 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
         Destroy(this.gameObject);
     }
 
-    void Move(string movement_pattern_string)
+    void AddMovePattern(string movement_pattern_string)
     {
         switch (movement_pattern_string)
         {
             case "forward":
-                movement = new Vector3(0, -speed * Time.deltaTime, 0);
-                transform.Translate(movement);
                 Debug.Log("I am moving forward!");
+                this.gameObject.AddComponent<EMForward>();
+                this.GetComponent<EMForward>().speed = speed;
                 break;
             case "sine_wave":
-                movement = new Vector3((sine_formula_y), (sine_formula_y), 0f) * speed * Time.deltaTime;
-                transform.Translate(movement);
+                this.gameObject.AddComponent<EMSine>();
+                this.GetComponent<EMSine>().linear_speed = speed;
+                this.GetComponent<EMSine>().amplitude = sineamplitude;
                 Debug.Log("I am moving in a sine wave!");
                 break;
             case default(string):

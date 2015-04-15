@@ -1,7 +1,123 @@
 fileFormatVersion: 2
 guid: 5cc584935bb253f4493317d80a9bc67f
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ships_human_0_0
+    21300002: ships_human_0_1
+    21300004: ships_human_0_2
+    21300006: ships_human_0_3
+    21300008: ships_human_0_4
+    21300010: ships_human_0_5
+    21300012: ships_human_0_6
+    21300014: ships_human_0_7
+    21300016: ships_human_0_8
+    21300018: ships_human_0_9
+    21300020: ships_human_0_10
+    21300022: ships_human_0_11
+    21300024: ships_human_0_12
+    21300026: ships_human_0_13
+    21300028: ships_human_0_14
+    21300030: ships_human_0_15
+    21300032: ships_human_0_16
+    21300034: ships_human_0_17
+    21300036: ships_human_0_18
+    21300038: ships_human_0_19
+    21300040: ships_human_0_20
+    21300042: ships_human_0_21
+    21300044: ships_human_0_22
+    21300046: ships_human_0_23
+    21300048: ships_human_0_24
+    21300050: ships_human_0_25
+    21300052: ships_human_0_26
+    21300054: ships_human_0_27
+    21300056: ships_human_0_28
+    21300058: ships_human_0_29
+    21300060: ships_human_0_30
+    21300062: ships_human_0_31
+    21300064: ships_human_0_32
+    21300066: ships_human_0_33
+    21300068: ships_human_0_34
+    21300070: ships_human_0_35
+    21300072: ships_human_0_36
+    21300074: ships_human_0_37
+    21300076: ships_human_0_38
+    21300078: ships_human_0_39
+    21300080: ships_human_0_40
+    21300082: ships_human_0_41
+    21300084: ships_human_0_42
+    21300086: ships_human_0_43
+    21300088: ships_human_0_44
+    21300090: ships_human_0_45
+    21300092: ships_human_0_46
+    21300094: ships_human_0_47
+    21300096: ships_human_0_48
+    21300098: ships_human_0_49
+    21300100: ships_human_0_50
+    21300102: ships_human_0_51
+    21300104: ships_human_0_52
+    21300106: ships_human_0_53
+    21300108: ships_human_0_54
+    21300110: ships_human_0_55
+    21300112: ships_human_0_56
+    21300114: ships_human_0_57
+    21300116: ships_human_0_58
+    21300118: ships_human_0_59
+    21300120: ships_human_0_60
+    21300122: ships_human_0_61
+    21300124: ships_human_0_62
+    21300126: ships_human_0_63
+    21300128: ships_human_0_64
+    21300130: ships_human_0_65
+    21300132: ships_human_0_66
+    21300134: ships_human_0_67
+    21300136: ships_human_0_68
+    21300138: ships_human_0_69
+    21300140: ships_human_0_70
+    21300142: ships_human_0_71
+    21300144: ships_human_0_72
+    21300146: ships_human_0_73
+    21300148: ships_human_0_74
+    21300150: ships_human_0_75
+    21300152: ships_human_0_76
+    21300154: ships_human_0_77
+    21300156: ships_human_0_78
+    21300158: ships_human_0_79
+    21300160: ships_human_0_80
+    21300162: ships_human_0_81
+    21300164: ships_human_0_82
+    21300166: ships_human_0_83
+    21300168: ships_human_0_84
+    21300170: ships_human_0_85
+    21300172: ships_human_0_86
+    21300174: ships_human_0_87
+    21300176: ships_human_0_88
+    21300178: ships_human_0_89
+    21300180: ships_human_0_90
+    21300182: ships_human_0_91
+    21300184: ships_human_0_92
+    21300186: ships_human_0_93
+    21300188: ships_human_0_94
+    21300190: ships_human_0_95
+    21300192: ships_human_0_96
+    21300194: ships_human_0_97
+    21300196: ships_human_0_98
+    21300198: ships_human_0_99
+    21300200: ships_human_0_100
+    21300202: ships_human_0_101
+    21300204: ships_human_0_102
+    21300206: ships_human_0_103
+    21300208: ships_human_0_104
+    21300210: ships_human_0_105
+    21300212: ships_human_0_106
+    21300214: ships_human_0_107
+    21300216: ships_human_0_108
+    21300218: ships_human_0_109
+    21300220: ships_human_0_110
+    21300222: ships_human_0_111
+    21300224: ships_human_0_112
+    21300226: ships_human_0_113
+    21300228: ships_human_0_114
+    21300230: ships_human_0_115
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -24,14 +140,14 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +158,1166 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: ships_human_0_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1184
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1184
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1184
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 1184
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_4
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 1184
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_5
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 1184
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_6
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1184
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_7
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1184
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_8
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1184
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_9
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 1184
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1103
+        width: 128
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_11
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1104
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_12
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1103
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_13
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1104
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_14
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 1103
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_15
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1075
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_16
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1073
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_17
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1075
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_18
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 1073
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1027
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_20
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1030
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_21
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1027
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 944
+        width: 64
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_23
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 944
+        width: 31
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_24
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 944
+        width: 31
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_25
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 912
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_26
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 912
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_27
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 912
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_28
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 912
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_29
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 880
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_30
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 880
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_31
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 880
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_32
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 880
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_33
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 880
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_34
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 880
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_35
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 880
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_36
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 880
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_37
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 880
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_38
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 880
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 799
+        width: 128
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_40
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 800
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_41
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 799
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_42
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 800
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_43
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 799
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_44
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 771
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_45
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 769
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_46
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 771
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_47
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 769
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 723
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_49
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 726
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_50
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 723
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 64
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_52
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 640
+        width: 31
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_53
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 640
+        width: 31
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_54
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 608
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_55
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 608
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_56
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 608
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_57
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 608
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_58
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 576
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_59
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 576
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_60
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 576
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_61
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 576
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_62
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 576
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_63
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 576
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_64
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 576
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_65
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 576
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_66
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 576
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_67
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 576
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 495
+        width: 128
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_69
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 496
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_70
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 495
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_71
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 496
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_72
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 495
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_73
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 467
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_74
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 465
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_75
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 467
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_76
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 465
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_77
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 419
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_78
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 422
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_79
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 419
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 64
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_81
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 336
+        width: 31
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_82
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 336
+        width: 31
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_83
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 304
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_84
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 304
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_85
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 304
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_86
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 304
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_87
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 272
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_88
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 272
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_89
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 272
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_90
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 272
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_91
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 272
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_92
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 272
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_93
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 272
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_94
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 272
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_95
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 272
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_96
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 272
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_97
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 191
+        width: 128
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_98
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 192
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_99
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 191
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_100
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 192
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_101
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 191
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_102
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 163
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_103
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 161
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_104
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 163
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_105
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 161
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_106
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 115
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_107
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 118
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_108
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 115
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_109
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 64
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_110
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 32
+        width: 31
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_111
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 32
+        width: 31
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_112
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_113
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_114
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ships_human_0_115
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 0
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

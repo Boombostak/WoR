@@ -58,7 +58,7 @@ public class EnemyWeapon : MonoBehaviour
     {
         shot_countup += Time.deltaTime;
 
-        if (shot_countup > shot_delay)
+        if (shot_countup > shot_delay && thisenemy.renderer.isVisible)
         {
             Shoot();
         }

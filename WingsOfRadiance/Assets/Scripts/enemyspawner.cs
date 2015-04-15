@@ -6,15 +6,17 @@ public class enemyspawner : MonoBehaviour {
 
     public GameObject enemymanager;
     public GameObject thing_to_spawn;
+
     public float time_between_spawns;
+    public int number_to_spawn;
     public float countdown;
+
     public enum Movement_Pattern {forward, sine_wave, chase_player};
     public Movement_Pattern movement_switch;
+
     public string movement_pattern;
-    public string sine_formula_x_string;//write out the vector3 x, y fields as a string.
-    public string sine_formula_y_string;
-    public float sine_formula_x_float;
-    public float sine_formula_y_float;
+    public float sineamplitude;
+    public float speed_multiplier=1;
     
     // Use this for initialization
 	void Start () {
@@ -43,11 +45,8 @@ public class enemyspawner : MonoBehaviour {
         {
             thing_to_spawn = enemymanager.GetComponent<EnemyManagerGO>().SpawnAnEnemy(this.transform);
             thing_to_spawn.GetComponent<EnemyBehaviour>().movement_pattern_string = movement_pattern;
-            sine_formula_x_float = Convert.ToSingle(sine_formula_x_string);
-            thing_to_spawn.GetComponent<EnemyBehaviour>().sine_formula_x = sine_formula_x_float;
-            sine_formula_y_float = Convert.ToSingle(sine_formula_y_string);
-            thing_to_spawn.GetComponent<EnemyBehaviour>().sine_formula_y = sine_formula_y_float;
-            Debug.Log("Your sine floats are" + sine_formula_y_float + "," + sine_formula_y_float);
+            thing_to_spawn.GetComponent<EnemyBehaviour>().sineamplitude = sineamplitude;
+            thing_to_spawn.GetComponent<EnemyBehaviour>().speed_multiplier = speed_multiplier;
             GameObject.Instantiate (thing_to_spawn, this.transform.position, this.transform.rotation);
             countdown = time_between_spawns;
         }

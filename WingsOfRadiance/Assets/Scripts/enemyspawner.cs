@@ -47,7 +47,7 @@ public class enemyspawner : MonoBehaviour {
             thing_to_spawn.GetComponent<EnemyBehaviour>().movement_pattern_string = movement_pattern;
             thing_to_spawn.GetComponent<EnemyBehaviour>().sineamplitude = sineamplitude;
             thing_to_spawn.GetComponent<EnemyBehaviour>().speed_multiplier = speed_multiplier;
-            GameObject.Instantiate (thing_to_spawn, this.transform.position, thing_to_spawn.transform.rotation);
+            GameObject.Instantiate (thing_to_spawn, this.transform.position, this.transform.rotation);
             countdown = time_between_spawns;
         }
 	

@@ -50,12 +50,12 @@ public class Weapon : MonoBehaviour
 
         
 
-        if (this.transform == player.transform.GetChild(1).GetChild(0))
+        if (this.transform == player.transform.FindChild("weapons").GetChild(0))
 	    {
             shootbutton = "Fire1";
 	    }
-        
-        if (this.transform == player.transform.GetChild(1).GetChild(1))
+
+        if (this.transform == player.transform.FindChild("weapons").GetChild(1))
         {
             shootbutton = "Fire2";
         }

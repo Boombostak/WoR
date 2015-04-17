@@ -20,7 +20,7 @@ public class PlayerEquipped : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player");
         fuselageGO = Instantiate(fuselage) as GameObject;
-        fuselageGO.transform.SetParent(player.transform.FindChild("fuselage"));
+        fuselageGO.transform.SetParent(player.transform.FindChild("fuselage"));//currently works
     }
     
     // Use this for initialization

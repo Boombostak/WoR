@@ -61,7 +61,7 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
         switch (movement_pattern_string)
         {
             case "forward":
-                Debug.Log("I am moving forward!");
+                //Debug.Log("I am moving forward!");
                 this.gameObject.AddComponent<EMForward>();
                 this.GetComponent<EMForward>().speed = speed;
                 break;
@@ -69,7 +69,7 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
                 this.gameObject.AddComponent<EMSine>();
                 this.GetComponent<EMSine>().linear_speed = speed;
                 this.GetComponent<EMSine>().amplitude = sineamplitude;
-                Debug.Log("I am moving in a sine wave!");
+                //Debug.Log("I am moving in a sine wave!");
                 break;
             case default(string):
                 Debug.Log("No pattern selected! ERROR");

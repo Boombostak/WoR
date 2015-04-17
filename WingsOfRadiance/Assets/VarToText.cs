@@ -38,6 +38,6 @@ public class VarToText : MonoBehaviour {
         mattergui.text = ("Matter" + currentmattervar.ToString() + "/" + maxmattervar.ToString());
         energygui.text = ("Energy" + currentenergyvar.ToString() + "/" + maxenergyvar.ToString());
         storagegui.text = ("Storage" + currentstoragevar.ToString() + "/" + maxstoragevar.ToString());
-        Debug.Log(mattergui.text);
+        //Debug.Log(mattergui.text);
 	}
 }

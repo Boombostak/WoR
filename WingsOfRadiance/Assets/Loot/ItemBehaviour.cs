@@ -69,7 +69,7 @@ public class ItemBehaviour : MonoBehaviour {
         yield return new WaitForSeconds(0.2f);
         this.renderer.enabled = !this.renderer.enabled;
         isblinking = true;
-        Debug.Log("called itemblink)");
+        Debug.Log("called itemblink");
     }
 
     void OnTriggerEnter2D(Collider2D othercollider)

@@ -18,7 +18,7 @@ public class SocketScript : MonoBehaviour {
         if (level > 34 && level <= 49) { max_sockets = 5; }
         if (level >= 50) { max_sockets = 6; }
 
-        Debug.Log("max sockets " +max_sockets);
+        //Debug.Log("max sockets " +max_sockets);
 
         sockets_rng = Random.Range(0, max_sockets + 1);
         if (sockets_rng > 0)

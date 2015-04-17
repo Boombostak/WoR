@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 
     public GameObject[] shot_origins;
     public int hardpoints;
+    public GameObject currentfuselage;
     public int originmax;
     
     public int basedamage;
@@ -30,13 +31,14 @@ public class Weapon : MonoBehaviour
     {
         proj_instance = projectile;
         proj_instance.CreatePool();
-        //proj_instance = Instantiate(projectile) as Projectile;
     }
     
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playertraits = player.GetComponent<PlayerTraits>();
+        currentfuselage = player.transform.Find("fuselage").GetChild(0).gameObject;
+        Debug.Log("curret fuselage is" + currentfuselage);
         floatdamage = (float)basedamage * playertraits.damage_multiplier + (float)playertraits.damage_bonus;
         finaldamage = (int)floatdamage;
         final_proj_speed = base_proj_speed * 1;//playertrait not set up
@@ -59,9 +61,9 @@ public class Weapon : MonoBehaviour
         {
             shootbutton = "Fire2";
         }
-
-        hardpoints = player.transform.Find("hardpoints").childCount;
-
+        Debug.Log("hardpoints initial" + hardpoints);
+        hardpoints = currentfuselage.transform.FindChild("hardpoints").childCount;
+        Debug.Log("hardpoints final" + hardpoints);
         if (hardpoints > shot_origins.Length)
         {
             originmax = shot_origins.Length;
@@ -73,7 +75,7 @@ public class Weapon : MonoBehaviour
 
         for (int i = 0; i < originmax; i++)
         {
-            shot_origins[i].transform.parent = player.transform.Find("hardpoints").GetChild(i);
+            shot_origins[i].transform.parent = currentfuselage.transform.FindChild("hardpoints").GetChild(i);
             shot_origins[i].transform.localPosition = Vector3.zero;
         }
         

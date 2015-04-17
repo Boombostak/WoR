@@ -72,7 +72,7 @@ public class EnemyManagerGO : MonoBehaviour {
         enemytable = enemyrarity_selectionGO.GetComponent<EnemyTable>().enemies;
         chosenenemy_selectionGO = enemytable[Random.Range(0, enemytable.Length)];
         thing_to_spawn = Instantiate(chosenenemy_selectionGO, where.position, where.rotation) as GameObject;
-        Debug.Log("levelint " + level_int);
+        //Debug.Log("levelint " + level_int);
         return thing_to_spawn;
     }
 

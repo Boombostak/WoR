@@ -88,14 +88,14 @@
      <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
      <Compile Include="Assets\Scripts\UI\NewGameMenu.cs" />
      <Compile Include="Assets\Scripts\UI\ScreenManager.cs" />
-     <Compile Include="Assets\Scripts\Weapons\HomingMissile.cs" />
-     <Compile Include="Assets\Scripts\Weapons\Missile.cs" />
-     <Compile Include="Assets\Scripts\Weapons\Projectile.cs" />
-     <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
      <Compile Include="Assets\Scripts\enemyspawner.cs" />
      <Compile Include="Assets\Scripts\player_movement.cs" />
      <Compile Include="Assets\Scripts\player_shooting.cs" />
      <Compile Include="Assets\VarToText.cs" />
+     <Compile Include="Assets\Weapons\HomingMissile.cs" />
+     <Compile Include="Assets\Weapons\Missile.cs" />
+     <Compile Include="Assets\Weapons\Projectile.cs" />
+     <Compile Include="Assets\Weapons\Weapon.cs" />
      <Compile Include="Assets\cull_and_reflect.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>

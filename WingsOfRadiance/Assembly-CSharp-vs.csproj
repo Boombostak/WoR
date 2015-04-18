@@ -60,6 +60,7 @@
      <Compile Include="Assets\Loot\SocketScript.cs" />
      <Compile Include="Assets\ObjectPool\Scripts\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\BackgroundBehaviour.cs" />
+     <Compile Include="Assets\Scripts\BackgroundBehaviourHoriz.cs" />
      <Compile Include="Assets\Scripts\BulletBehaviour.cs" />
      <Compile Include="Assets\Scripts\Cleanup.cs" />
      <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />

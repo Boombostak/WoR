@@ -43,7 +43,7 @@ public class CameraBehaviour : MonoBehaviour
         cameramovement = playermovement.movement_return / 2f;
         camera.transform.Translate(cameramovement);
         camera.transform.position = 
-            new Vector3((Mathf.Clamp(camera.transform.position.x, xmin/5f, xmax/5f)),//it would be nice to work out this math better
+            new Vector3((Mathf.Clamp(camera.transform.position.x, xmin/4f, xmax/4f)),//it would be nice to work out this math better
                         Mathf.Clamp(camera.transform.position.y, 0,0),
                         camera.transform.position.z);
     }

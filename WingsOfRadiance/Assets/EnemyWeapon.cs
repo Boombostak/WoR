@@ -11,7 +11,7 @@ public class EnemyWeapon : MonoBehaviour
     public float proj_speed;
     private float shot_delay;
     public float rof;
-    public EnemyProjectile projectile;
+    public GameObject projectile;
     public EnemyProjectile proj_instance;
     public GameObject player;
     public GameObject thisenemy;
@@ -21,7 +21,8 @@ public class EnemyWeapon : MonoBehaviour
 
     void Awake()
     {
-        proj_instance = projectile;
+
+        proj_instance = projectile.GetComponent<EnemyProjectile>(); ;
         //proj_instance = Instantiate(projectile) as Projectile;
     }
 
@@ -36,7 +37,7 @@ public class EnemyWeapon : MonoBehaviour
         proj_instance.speed = proj_speed;
 
         hardpoints = thisenemy.transform.Find("hardpoints").childCount;
-        //Debug.Log("Hardpoints" + hardpoints);
+        Debug.Log("enemy hardpoints" + hardpoints);
 
         if (hardpoints > shot_origins.Length)
         {

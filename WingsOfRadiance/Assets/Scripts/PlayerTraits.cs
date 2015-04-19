@@ -23,7 +23,7 @@ public class PlayerTraits : MonoBehaviour {
     public int mass_absorbtion;
     public int energy_absorbtion;
     public int bounty_collection;
-    //reputation?
+	public int reputation;//positive means good vibes with union, negative means good vibes with corps.
 
     //dynamic values
     public int currentmatter;

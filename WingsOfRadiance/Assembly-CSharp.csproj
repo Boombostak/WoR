@@ -79,7 +79,6 @@
      <Compile Include="Assets\Scripts\LootManagerGO.cs" />
      <Compile Include="Assets\Scripts\LootRoller.cs" />
      <Compile Include="Assets\Scripts\LootTable.cs" />
-     <Compile Include="Assets\Scripts\MissionBuilder.cs" />
      <Compile Include="Assets\Scripts\PlayerEquipped.cs" />
      <Compile Include="Assets\Scripts\PlayerLvl.cs" />
      <Compile Include="Assets\Scripts\PlayerTraits.cs" />

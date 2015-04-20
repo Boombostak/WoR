@@ -38,7 +38,7 @@ public class Weapon : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playertraits = player.GetComponent<PlayerTraits>();
         currentfuselage = player.transform.Find("fuselage").GetChild(0).gameObject;
-        Debug.Log("curret fuselage is" + currentfuselage);
+        //Debug.Log("curret fuselage is" + currentfuselage);
         floatdamage = (float)basedamage * playertraits.damage_multiplier + (float)playertraits.damage_bonus;
         finaldamage = (int)floatdamage;
         final_proj_speed = base_proj_speed * 1;//playertrait not set up
@@ -61,9 +61,9 @@ public class Weapon : MonoBehaviour
         {
             shootbutton = "Fire2";
         }
-        Debug.Log("hardpoints initial" + hardpoints);
+        //Debug.Log("hardpoints initial" + hardpoints);
         hardpoints = currentfuselage.transform.FindChild("hardpoints").childCount;
-        Debug.Log("hardpoints final" + hardpoints);
+        //Debug.Log("hardpoints final" + hardpoints);
         if (hardpoints > shot_origins.Length)
         {
             originmax = shot_origins.Length;

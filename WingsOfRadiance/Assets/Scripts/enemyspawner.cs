@@ -21,7 +21,7 @@ public class enemyspawner : MonoBehaviour {
 	void Start () {
         countdown = time_between_spawns;
         enemymanager = GameObject.FindGameObjectWithTag("enemymanager");
-        Debug.Log("Your enemymanager is" + enemymanager);
+        //Debug.Log("Your enemymanager is" + enemymanager);
 
         
         switch (movement_switch)

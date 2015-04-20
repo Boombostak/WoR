@@ -56,6 +56,7 @@
      <Compile Include="Assets\ExperienceTable.cs" />
      <Compile Include="Assets\HP_Spinner.cs" />
      <Compile Include="Assets\HP_Sweeper.cs" />
+     <Compile Include="Assets\LevelLoader.cs" />
      <Compile Include="Assets\Loot\AffixScript.cs" />
      <Compile Include="Assets\Loot\ItemBehaviour.cs" />
      <Compile Include="Assets\Loot\SocketGO.cs" />
@@ -79,6 +80,8 @@
      <Compile Include="Assets\Scripts\LootManagerGO.cs" />
      <Compile Include="Assets\Scripts\LootRoller.cs" />
      <Compile Include="Assets\Scripts\LootTable.cs" />
+     <Compile Include="Assets\Scripts\Mission.cs" />
+     <Compile Include="Assets\Scripts\MissionManager.cs" />
      <Compile Include="Assets\Scripts\PlayerEquipped.cs" />
      <Compile Include="Assets\Scripts\PlayerLvl.cs" />
      <Compile Include="Assets\Scripts\PlayerTraits.cs" />

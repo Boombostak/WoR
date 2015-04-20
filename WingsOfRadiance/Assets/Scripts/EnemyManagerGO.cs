@@ -4,7 +4,9 @@ using System.Collections;
 public class EnemyManagerGO : MonoBehaviour {
 
     private GameObject player;
-    private int level_int;
+	public int level_int;
+	private GameObject selectedmission;
+	private GameObject startingtile;
 
     private GameObject level_selectionGO;
     private GameObject enemytype_selectionGO;
@@ -56,7 +58,8 @@ public class EnemyManagerGO : MonoBehaviour {
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); //Finds player GO.
-        level_int = player.GetComponent<PlayerTraits>().playerlvl; //Defines the player's level.
+		selectedmission = GameObject.Find ("MissionManager").GetComponent<MissionManager>().selectedmission;
+		level_int = selectedmission.GetComponent<Mission>().missionlevel; //Defines the mission level.
         level_selectionGO = this.transform.GetChild(level_int).gameObject;
         //Debug.Log(level_selectionGO);
         thing_to_spawn = new GameObject();

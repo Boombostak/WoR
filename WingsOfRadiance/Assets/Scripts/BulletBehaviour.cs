@@ -33,7 +33,7 @@ public class BulletBehaviour : MonoBehaviour
         Destroy(gameObject, self_destruct_timer);
         
         lootmanager = GameObject.FindGameObjectWithTag("lootmanager");
-        Debug.Log(lootmanager + "is your lootmanager!");
+        //Debug.Log(lootmanager + "is your lootmanager!");
         
     }
 

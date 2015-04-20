@@ -47,7 +47,7 @@ public class Weapon : MonoBehaviour
         basedps = baserof * (float)basedamage;
         finaldps = finalrof * (float)finaldamage;
 
-        proj_instance.damage = finaldamage;
+        proj_instance.initialdamage = finaldamage;
         proj_instance.speed = final_proj_speed;
 
         

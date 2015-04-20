@@ -17,7 +17,7 @@ public class MissionText : MonoBehaviour {
 		missionmanager = GameObject.Find ("MissionManager");
 		Debug.Log ("MissionManager is" + missionmanager);
 
-		for (int i = 0; i < missionselectionsUI.transform.childCount; i++) {
+		for (int i = 0; i < missionmanager.transform.childCount; i++) {
 			_text = missionselectionsUI.transform.GetChild(i).GetChild(0).GetComponent<Text>();
 			_text.text = 	
 				missionmanager.transform.GetChild(i).name + 

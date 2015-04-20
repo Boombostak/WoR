@@ -6,11 +6,12 @@ public class MissionManager : MonoBehaviour {
 	public GameObject[] missionarray = new GameObject[5];
 	public GameObject selectedmission;
 
-	void Start(){
-		for (int i = 0; i < missionarray.Length; i++) {
-			
-				}
-		selectedmission = missionarray [Random.Range (0, missionarray.Length)];
+	public void SelectMission(int missionlevel, GameObject startingtile){
+		missionlevel = selectedmission.GetComponent<Mission> ().missionlevel;
+		startingtile = selectedmission.GetComponent<Mission> ().startingtile;
+
+		DontDestroyOnLoad (this);
+		Application.LoadLevel ("test");
 		Instantiate (selectedmission.GetComponent<Mission>().startingtile);
-	}
+		}
 }

@@ -11,5 +11,6 @@ public class MissionManager : MonoBehaviour {
 			
 				}
 		selectedmission = missionarray [Random.Range (0, missionarray.Length)];
+		Instantiate (selectedmission.GetComponent<Mission>().startingtile);
 	}
 }

@@ -1,16 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyManagerGO.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Mission.cs">
     <Files>
-      <File FileName="Assets\Scripts\MissionManager.cs" Line="15" Column="2" />
-      <File FileName="Assets\Scripts\Mission.cs" Line="17" Column="3" />
+      <File FileName="Assets\Scripts\MissionManager.cs" Line="15" Column="3" />
+      <File FileName="Assets\Scripts\Mission.cs" Line="21" Column="1" />
       <File FileName="Assets\Scripts\PlayerTraits.cs" Line="1" Column="1" />
       <File FileName="Assets\Enemies\EnemyWeapons\EnemyProjectiles\EnemyProjectile.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyManagerGO.cs" Line="7" Column="8" />
+      <File FileName="Assets\Scripts\EnemyManagerGO.cs" Line="1" Column="1" />
       <File FileName="Assets\Weapons\Weapon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\enemyspawner.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BulletBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LootManagerGO.cs" Line="8" Column="26" />
+      <File FileName="Assets\Scripts\LootManagerGO.cs" Line="1" Column="1" />
       <File FileName="Assets\ExperienceTable.cs" Line="1" Column="1" />
       <File FileName="Assets\LevelLoader.cs" Line="1" Column="1" />
     </Files>

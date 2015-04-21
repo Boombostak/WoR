@@ -603,6 +603,8 @@ TextureImporter:
     21301196: f-asc_p01_B51b3a4a800130e14_597
     21301198: f-asc_p01_B51b3a4a800130e14_598
     21301200: f-asc_p01_B51b3a4a800130e14_599
+    21301202: f-asc_p01_B51b3a4a800130e14_600
+    21301204: f-asc_p01_B51b3a4a800130e14_601
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -5468,9 +5470,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 76
-        y: 0
+        y: 64
         width: 10
-        height: 95
+        height: 31
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6639,6 +6641,26 @@ TextureImporter:
         serializedVersion: 2
         x: 44
         y: 448
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: f-asc_p01_B51b3a4a800130e14_600
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 32
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: f-asc_p01_B51b3a4a800130e14_601
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
         width: 8
         height: 32
       alignment: 0

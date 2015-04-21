@@ -52,8 +52,7 @@
      <Compile Include="Assets\Enemies\EnemyMovementPatterns\EMForward.cs" />
      <Compile Include="Assets\Enemies\EnemyMovementPatterns\EMSine.cs" />
      <Compile Include="Assets\Enemies\EnemyWeapons\EnemyProjectiles\EnemyProjectile.cs" />
-     <Compile Include="Assets\EnemyWeapon.cs" />
-     <Compile Include="Assets\ExperienceTable.cs" />
+     <Compile Include="Assets\Enemies\EnemyWeapons\EnemyWeapon.cs" />
      <Compile Include="Assets\HP_Spinner.cs" />
      <Compile Include="Assets\HP_Sweeper.cs" />
      <Compile Include="Assets\LevelLoader.cs" />
@@ -69,6 +68,7 @@
      <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\EnemyManagerGO.cs" />
      <Compile Include="Assets\Scripts\EnemyTable.cs" />
+     <Compile Include="Assets\Scripts\ExperienceTable.cs" />
      <Compile Include="Assets\Scripts\FindNearestEnemy.cs" />
      <Compile Include="Assets\Scripts\Interfaces\Interfaces.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />
@@ -77,6 +77,7 @@
      <Compile Include="Assets\Scripts\Legacy\LootLevel.cs" />
      <Compile Include="Assets\Scripts\Legacy\LootManager.cs" />
      <Compile Include="Assets\Scripts\Legacy\LootWrapperClasses.cs" />
+     <Compile Include="Assets\Scripts\Legacy\VarToText.cs" />
      <Compile Include="Assets\Scripts\LootManagerGO.cs" />
      <Compile Include="Assets\Scripts\LootRoller.cs" />
      <Compile Include="Assets\Scripts\LootTable.cs" />
@@ -100,7 +101,6 @@
      <Compile Include="Assets\Scripts\enemyspawner.cs" />
      <Compile Include="Assets\Scripts\player_movement.cs" />
      <Compile Include="Assets\Scripts\player_shooting.cs" />
-     <Compile Include="Assets\VarToText.cs" />
      <Compile Include="Assets\Weapons\HomingMissile.cs" />
      <Compile Include="Assets\Weapons\Missile.cs" />
      <Compile Include="Assets\Weapons\Projectile.cs" />

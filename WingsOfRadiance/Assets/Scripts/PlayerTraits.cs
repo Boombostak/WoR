@@ -27,14 +27,14 @@ public class PlayerTraits : MonoBehaviour {
 
     //dynamic values
     public int currentmatter;
-    public int currentenergy;
-    public int credits;
+	public int currentenergy;
+	public int credits;
 
     public float dps;
 
     
 
-    void Start()
+    void Awake()
     {
         for (int i = 0; i < ExperienceTable.xp_for_level_i.Length; i++)
         {

@@ -13,9 +13,9 @@ public class MissionText : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		missionselectionsUI = GameObject.Find ("MissionSelections");
-		Debug.Log ("MissionSelections is" + missionselectionsUI);
+		//Debug.Log ("MissionSelections is" + missionselectionsUI);
 		missionmanager = GameObject.Find ("MissionManager");
-		Debug.Log ("MissionManager is" + missionmanager);
+		//Debug.Log ("MissionManager is" + missionmanager);
 
 		for (int i = 0; i < missionmanager.transform.childCount; i++) {
 			_text = missionselectionsUI.transform.GetChild(i).GetChild(0).GetComponent<Text>();
@@ -23,9 +23,9 @@ public class MissionText : MonoBehaviour {
 				missionmanager.transform.GetChild(i).name + 
 				"Level:" + missionmanager.transform.GetChild(i).GetComponent<Mission>().missionlevel +
 				"Environment:" + missionmanager.transform.GetChild(i).GetComponent<Mission>().startingtile;
-			
-
 				missionselectionsUI.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = _text.text;
+
+
 				}
 	}
 }

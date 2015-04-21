@@ -13,8 +13,8 @@ public class Mission : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		playertraits = player.GetComponent<PlayerTraits>();
 		missionlevel = Mathf.Clamp(playertraits.playerlvl + (Random.Range (-4,4)), 0, 19);
-		Debug.Log ("mission level is" + missionlevel);
+		//Debug.Log ("mission level is" + missionlevel);
 		startingtile = startingtiles[Random.Range (0, startingtiles.Length)];
-		Debug.Log ("number of starting tiles" + startingtiles.Length);
+		//Debug.Log ("number of starting tiles" + startingtiles.Length);
 	}
 }

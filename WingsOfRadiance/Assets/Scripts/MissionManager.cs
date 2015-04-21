@@ -7,11 +7,11 @@ public class MissionManager : MonoBehaviour {
 	public GameObject selectedmission;
 
 	public void SelectMission(int missionlevel, GameObject startingtile){
-		missionlevel = selectedmission.GetComponent<Mission> ().missionlevel;
-		startingtile = selectedmission.GetComponent<Mission> ().startingtile;
-
+		selectedmission.GetComponent<Mission> ().missionlevel = missionlevel;
+		selectedmission.GetComponent<Mission> ().startingtile = startingtile;
+		Debug.Log ("level" + missionlevel + "and tile" + startingtile);
 		DontDestroyOnLoad (this);
-		Application.LoadLevel ("test");
+		//Application.LoadLevel ("test");
 		Instantiate (selectedmission.GetComponent<Mission>().startingtile);
 		}
 }

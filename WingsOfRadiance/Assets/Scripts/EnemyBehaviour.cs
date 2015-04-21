@@ -3,7 +3,10 @@ using System.Collections;
 
 public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
 
-    public float speed;
+	public int xp;
+	public int bounty;
+
+	public float speed;
     public float speed_multiplier = 1;
     private Vector3 movement;
     private Vector3 spawnpoint;

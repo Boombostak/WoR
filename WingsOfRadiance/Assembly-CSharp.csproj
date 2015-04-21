@@ -93,6 +93,7 @@
      <Compile Include="Assets\Scripts\UI\LoadGameMenu.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
      <Compile Include="Assets\Scripts\UI\MissionText.cs" />
+     <Compile Include="Assets\Scripts\UI\MissionUI.cs" />
      <Compile Include="Assets\Scripts\UI\NewGameMenu.cs" />
      <Compile Include="Assets\Scripts\UI\ScreenManager.cs" />
      <Compile Include="Assets\Scripts\enemyspawner.cs" />

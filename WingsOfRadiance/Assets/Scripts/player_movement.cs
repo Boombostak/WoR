@@ -26,14 +26,10 @@ public class player_movement : MonoBehaviour {
 
 // Use this for initialization
 
-
-    void Awake()
-    {
-        
-    }
-
 	void Start () {
-        //positionmin = CameraBehaviour.background_snapshot.min.x;
+		camera = GameObject.Find ("Main Camera").GetComponent<Camera>();
+		SharedVariables.camera = camera;
+		//positionmin = CameraBehaviour.background_snapshot.min.x;
         //positionmax = CameraBehaviour.background_snapshot.max.x;
         
 	}

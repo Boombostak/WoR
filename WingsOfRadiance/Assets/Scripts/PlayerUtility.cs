@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerUtility : MonoBehaviour {
 
-    MonoBehaviour[] components;
+    /*MonoBehaviour[] components;
     
     void Awake()
     {
@@ -20,5 +20,5 @@ public class PlayerUtility : MonoBehaviour {
 
             GetComponent<PlayerTraits>().enabled = true;
         }
-    }
+    }*/
 }

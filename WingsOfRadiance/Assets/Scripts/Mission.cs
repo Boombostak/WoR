@@ -10,7 +10,8 @@ public class Mission : MonoBehaviour {
 	public GameObject startingtile;
 
 	void Awake(){
-		player = GameObject.FindGameObjectWithTag ("Player");
+		player = GameObject.Find("player_prefab");
+		SharedVariables.player = player;
 		playertraits = player.GetComponent<PlayerTraits>();
 		missionlevel = Mathf.Clamp(playertraits.playerlvl + (Random.Range (-4,4)), 0, 19);
 		//Debug.Log ("mission level is" + missionlevel);

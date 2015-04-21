@@ -18,7 +18,10 @@ public class MissionManager : MonoBehaviour {
 		Debug.Log("SharedVars: PlayerLevel:" +SharedVariables.playerlevel +"MissionLevel:" +SharedVariables.missionlevel+"StartingTile:"+SharedVariables.startingtile+"Selectedmission:"+SharedVariables. selectedmission);
 
 		DontDestroyOnLoad (this);
-		//Application.LoadLevel ("test");
-		Instantiate (startingtile);
+		Application.LoadLevel ("test");
+		}
+
+	void OnLevelWasLoaded(){
+		GameObject.Instantiate(SharedVariables.startingtile);
 		}
 }

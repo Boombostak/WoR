@@ -32,23 +32,23 @@ public class PlayerTraits : MonoBehaviour {
 
     public float dps;
 
-    
 
-    void Start()
+	void Awake(){
+		SharedVariables.player = this.gameObject;
+		}
+	void Start()
     {
-        for (int i = 0; i < ExperienceTable.xp_for_level_i.Length; i++)
-        {
-            if (xp >= ExperienceTable.xp_for_level_i[i])
-            {
-                playerlvl = i;
-            }
-			SharedVariables.playerlevel = playerlvl;
-        }
+				for (int i = 0; i < ExperienceTable.xp_for_level_i.Length; i++) {
+						if (xp >= ExperienceTable.xp_for_level_i [i]) {
+								playerlvl = i;
+						}
+						SharedVariables.playerlevel = playerlvl;
         
 
-        currentmatter = matter_max;
-        currentenergy = energy_max;
-    }
+						currentmatter = matter_max;
+						currentenergy = energy_max;
+				}
+		}
     
     void Update()
     {

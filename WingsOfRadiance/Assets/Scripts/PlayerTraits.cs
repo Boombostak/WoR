@@ -34,7 +34,7 @@ public class PlayerTraits : MonoBehaviour {
 
     
 
-    void Awake()
+    void Start()
     {
         for (int i = 0; i < ExperienceTable.xp_for_level_i.Length; i++)
         {
@@ -42,6 +42,7 @@ public class PlayerTraits : MonoBehaviour {
             {
                 playerlvl = i;
             }
+			SharedVariables.playerlevel = playerlvl;
         }
         
 

@@ -58,7 +58,7 @@ public class EnemyManagerGO : MonoBehaviour {
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); //Finds player GO.
-		selectedmission = GameObject.Find ("MissionManager").GetComponent<MissionManager>().selectedmission;
+		selectedmission = SharedVariables.selectedmission.gameObject;
 		level_int = selectedmission.GetComponent<Mission>().missionlevel; //Defines the mission level.
         level_selectionGO = this.transform.GetChild(level_int).gameObject;
         //Debug.Log(level_selectionGO);

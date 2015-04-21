@@ -69,18 +69,12 @@ public class LootManagerGO : MonoBehaviour {
     // Use this for initialization
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player"); //Finds player GO.
-		selectedmission = GameObject.Find ("MissionManager").GetComponent<MissionManager>().selectedmission;
+		selectedmission = SharedVariables.selectedmission.gameObject;
         level_int = selectedmission.GetComponent<Mission>().missionlevel; //Defines the mission level.
 		startingtile = selectedmission.GetComponent<Mission> ().startingtile;
         level_selectionGO = this.transform.GetChild(level_int).gameObject;
         //Debug.Log(level_selectionGO);
         thing_to_spawn = new GameObject();
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 
     public GameObject DropAnItem(Transform where)

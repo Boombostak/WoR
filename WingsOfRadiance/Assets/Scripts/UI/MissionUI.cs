@@ -8,6 +8,7 @@ public class MissionUI : MonoBehaviour {
 	public GameObject startingtile;
 	public GameObject missionmanager;
 	public GameObject missionselectionsUI;
+	public Mission selectedmission;
 
 	void Start () {
 				missionselectionsUI = GameObject.Find ("MissionSelections");
@@ -26,7 +27,9 @@ public class MissionUI : MonoBehaviour {
 		Debug.Log ("startingtile should be" + missionmanager.transform.GetChild (childindex).GetComponent<Mission> ().startingtile);
 		level = missionmanager.transform.GetChild(childindex).GetComponent<Mission>().missionlevel;
 		startingtile = missionmanager.transform.GetChild(childindex).GetComponent<Mission> ().startingtile;
+		selectedmission = missionmanager.transform.GetChild (childindex).gameObject.GetComponent<Mission>();
+		Debug.Log("SharedVars: Playerlevel:" +SharedVariables.playerlevel +"StartingTile:"+SharedVariables.startingtile+"Selectedmission:"+SharedVariables. selectedmission);
 
-		missionmanager.GetComponent<MissionManager>().SelectMission (level, startingtile);
+		missionmanager.GetComponent<MissionManager>().SelectMission (level, selectedmission, startingtile);
 	}
 }

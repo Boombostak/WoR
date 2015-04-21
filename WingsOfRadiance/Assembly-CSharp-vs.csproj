@@ -88,6 +88,7 @@
      <Compile Include="Assets\Scripts\PlayerUtility.cs" />
      <Compile Include="Assets\Scripts\SaveLoad\GameState.cs" />
      <Compile Include="Assets\Scripts\SaveLoad\SaveLoad.cs" />
+     <Compile Include="Assets\Scripts\SharedVariables.cs" />
      <Compile Include="Assets\Scripts\SplineCPConstructor.cs" />
      <Compile Include="Assets\Scripts\SplineObjectPosition.cs" />
      <Compile Include="Assets\Scripts\UI\LoadGameMenu.cs" />

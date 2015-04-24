@@ -32,4 +32,8 @@ public class MissionUI : MonoBehaviour {
 
 		missionmanager.GetComponent<MissionManager>().SelectMission (level, selectedmission, startingtile);
 	}
+
+	public void QuitGameUI(){
+		Application.Quit();
+		}
 }

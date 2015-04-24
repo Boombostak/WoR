@@ -84,7 +84,7 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
                 this.gameObject.AddComponent<EMSine>();
                 this.GetComponent<EMSine>().linear_speed = speed;
                 this.GetComponent<EMSine>().amplitude = sineamplitude;
-				this.GetComponent<EMForward>().backgroundvector = backgroundvector;
+				this.GetComponent<EMSine>().backgroundvector = backgroundvector;
                 //Debug.Log("I am moving in a sine wave!");
                 break;
             case default(string):

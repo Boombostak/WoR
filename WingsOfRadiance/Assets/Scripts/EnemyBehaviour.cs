@@ -49,10 +49,11 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
             //Debug.Log("attempted to drop" + item_to_drop);
             Instantiate(item_to_drop, this.transform.position, Quaternion.identity);
             Destroy(lootmanager.GetComponent<LootManagerGO>().thing_to_spawn);
-			for (int i = 0; i < mattergos.Length; i++) {
-					Instantiate(mattergos[i], this.transform.position, Quaternion.identity);
-				}
+			
             }
+			for (int i = 0; i < mattergos.Length; i++) {
+				Instantiate(mattergos[i], this.transform.position, Quaternion.identity);
+			}
             DestroyThis();
         }
         

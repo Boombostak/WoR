@@ -8,7 +8,8 @@ public class enemyspawner : MonoBehaviour {
     public GameObject thing_to_spawn;
 
     public float time_between_spawns;
-    public int number_to_spawn;
+    public int number_to_spawn = 3;
+	public int numberspawned =0;
     public float countdown;
 
     public enum Movement_Pattern {forward, sine_wave, chase_player};
@@ -57,12 +58,13 @@ public class enemyspawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         countdown = countdown - Time.deltaTime;
-        if (countdown <= 0)
+        if (countdown <= 0 && numberspawned<number_to_spawn)
         {
             thing_to_spawn = enemymanager.GetComponent<EnemyManagerGO>().SpawnAnEnemy(this.transform, "Union", enemy_type);
             thing_to_spawn.GetComponent<EnemyBehaviour>().movement_pattern_string = movement_pattern;
             thing_to_spawn.GetComponent<EnemyBehaviour>().sineamplitude = sineamplitude;
             GameObject.Instantiate (thing_to_spawn, this.transform.position, this.transform.rotation);
+			numberspawned++;
             countdown = time_between_spawns;
         }
 	

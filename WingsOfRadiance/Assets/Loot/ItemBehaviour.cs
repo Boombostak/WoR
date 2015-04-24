@@ -42,7 +42,7 @@ public class ItemBehaviour : MonoBehaviour {
     IEnumerator ItemTimer()
     {
         float timer = lifetime;
-        Debug.Log("timer"+ timer);
+        //Debug.Log("timer"+ timer);
         while (timer > 2f)
         {
             timer -= Time.deltaTime;
@@ -69,7 +69,7 @@ public class ItemBehaviour : MonoBehaviour {
         yield return new WaitForSeconds(0.2f);
         this.renderer.enabled = !this.renderer.enabled;
         isblinking = true;
-        Debug.Log("called itemblink");
+        //Debug.Log("called itemblink");
     }
 
     void OnTriggerEnter2D(Collider2D othercollider)

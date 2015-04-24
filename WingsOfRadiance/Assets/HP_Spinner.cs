@@ -19,7 +19,7 @@ public class HP_Spinner : MonoBehaviour {
         if (random_direction)
         {
             signmult = ((Random.Range(0,2) * 2) - 1);//random ints exclude the max value!
-            Debug.Log("sign of HP rotator is" + signmult);
+            //Debug.Log("sign of HP rotator is" + signmult);
         }
     }
 

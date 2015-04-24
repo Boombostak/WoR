@@ -17,6 +17,8 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
     public static GameObject lootmanager;
     public int dropchance = 30;
     public int drop_rng;
+	public int matter_to_drop;
+	public GameObject[] mattergos;
 
     public string movement_pattern_string;
     public float sineamplitude;
@@ -38,9 +40,12 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
             if (drop_rng < dropchance)
             {
             item_to_drop = lootmanager.GetComponent<LootManagerGO>().DropAnItem(this.transform);
-            Debug.Log("attempted to drop" + item_to_drop);
+            //Debug.Log("attempted to drop" + item_to_drop);
             Instantiate(item_to_drop, this.transform.position, Quaternion.identity);
-            Destroy(lootmanager.GetComponent<LootManagerGO>().thing_to_spawn); 
+            Destroy(lootmanager.GetComponent<LootManagerGO>().thing_to_spawn);
+			for (int i = 0; i < mattergos.Length; i++) {
+					Instantiate(mattergos[i], this.transform.position, Quaternion.identity);
+				}
             }
             DestroyThis();
         }

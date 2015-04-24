@@ -37,7 +37,7 @@ public class EnemyWeapon : MonoBehaviour
         proj_instance.speed = proj_speed;
 
         hardpoints = thisenemy.transform.Find("hardpoints").childCount;
-        Debug.Log("enemy hardpoints" + hardpoints);
+        //Debug.Log("enemy hardpoints" + hardpoints);
 
         if (hardpoints > shot_origins.Length)
         {
@@ -47,7 +47,7 @@ public class EnemyWeapon : MonoBehaviour
         {
             originmax = hardpoints;
         }
-        Debug.Log("originmax" + originmax);
+        //Debug.Log("originmax" + originmax);
         for (int i = 0; i < originmax; i++)
         {
             shot_origins[i].transform.parent = thisenemy.transform.Find("hardpoints").GetChild(i);

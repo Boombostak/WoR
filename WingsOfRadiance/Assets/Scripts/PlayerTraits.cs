@@ -52,6 +52,9 @@ public class PlayerTraits : MonoBehaviour {
     
     void Update()
     {
+		if (currentmatter > matter_max) {currentmatter = matter_max;}
+		if (currentenergy > energy_max) {currentenergy = energy_max;}
+
         if (currentmatter < 1)
         {
             PlayerDied();

@@ -30,7 +30,7 @@ public class SocketScript : MonoBehaviour {
                 {
                     socketarray[i] = Instantiate(socketgo) as GameObject;
                 }
-                Debug.Log(socketarray.Length + "sockets!");
+                //Debug.Log(socketarray.Length + "sockets!");
             }
             LinkSockets(socketarray, socketarray.Length); 
         }

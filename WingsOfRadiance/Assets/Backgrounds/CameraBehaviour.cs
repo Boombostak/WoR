@@ -18,7 +18,7 @@ public class CameraBehaviour : MonoBehaviour
     void Awake()
     {
         camera = this.GetComponent<Camera>();
-        
+		backgroundrenderer = SharedVariables.startingtile.GetComponent<SpriteRenderer> ();
         background_snapshot = backgroundrenderer.bounds;
         xmin = background_snapshot.min.x;
         xmax = background_snapshot.max.x;
@@ -36,6 +36,7 @@ public class CameraBehaviour : MonoBehaviour
     
     void Start()
     {
+
     }
 
     void Update()

@@ -12,10 +12,10 @@ public class MissionManager : MonoBehaviour {
 		SharedVariables.selectedmission.missionlevel = missionlevel;
 		SharedVariables.missionlevel = missionlevel;
 		//this.gameObject.GetComponent<MissionManager> (). = SharedVariables.selectedmission;
-		Debug.Log ("level" + missionlevel + "and tile" + startingtile);
+		//Debug.Log ("level" + missionlevel + "and tile" + startingtile);
 		
 		
-		Debug.Log("SharedVars: PlayerLevel:" +SharedVariables.playerlevel +"MissionLevel:" +SharedVariables.missionlevel+"StartingTile:"+SharedVariables.startingtile+"Selectedmission:"+SharedVariables. selectedmission);
+		//Debug.Log("SharedVars: PlayerLevel:" +SharedVariables.playerlevel +"MissionLevel:" +SharedVariables.missionlevel+"StartingTile:"+SharedVariables.startingtile+"Selectedmission:"+SharedVariables. selectedmission);
 
 		DontDestroyOnLoad (this);
 		Application.LoadLevel ("test");

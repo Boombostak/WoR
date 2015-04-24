@@ -14,8 +14,13 @@ public class enemyspawner : MonoBehaviour {
     public enum Movement_Pattern {forward, sine_wave, chase_player};
     public Movement_Pattern movement_switch;
 
+	public enum EnemyType {space, ground, water};
+	public EnemyType enemy_type_switch;
+
     public string movement_pattern;
     public float sineamplitude;
+
+	public string enemy_type;
     
     // Use this for initialization
 	void Start () {
@@ -35,6 +40,18 @@ public class enemyspawner : MonoBehaviour {
             default :Debug.Log("No movement pattern!!!");
                 break;
         }
+
+		switch (enemy_type_switch)
+		{
+		case EnemyType.space: enemy_type = "space";
+			break;
+		case EnemyType.ground: enemy_type = "ground";
+			break;
+		case EnemyType.water : enemy_type = "water";
+			break;
+		default :Debug.Log("No enemy type!!!");
+			break;
+		}
 	}
 	
 	// Update is called once per frame
@@ -42,7 +59,7 @@ public class enemyspawner : MonoBehaviour {
         countdown = countdown - Time.deltaTime;
         if (countdown <= 0)
         {
-            thing_to_spawn = enemymanager.GetComponent<EnemyManagerGO>().SpawnAnEnemy(this.transform);
+            thing_to_spawn = enemymanager.GetComponent<EnemyManagerGO>().SpawnAnEnemy(this.transform, "Union", enemy_type);
             thing_to_spawn.GetComponent<EnemyBehaviour>().movement_pattern_string = movement_pattern;
             thing_to_spawn.GetComponent<EnemyBehaviour>().sineamplitude = sineamplitude;
             GameObject.Instantiate (thing_to_spawn, this.transform.position, this.transform.rotation);

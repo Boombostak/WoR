@@ -53,6 +53,7 @@
      <Compile Include="Assets\Enemies\EnemyMovementPatterns\EMSine.cs" />
      <Compile Include="Assets\Enemies\EnemyWeapons\EnemyProjectiles\EnemyProjectile.cs" />
      <Compile Include="Assets\Enemies\EnemyWeapons\EnemyWeapon.cs" />
+     <Compile Include="Assets\HPPlayerTracker.cs" />
      <Compile Include="Assets\HP_Spinner.cs" />
      <Compile Include="Assets\HP_Sweeper.cs" />
      <Compile Include="Assets\LevelLoader.cs" />

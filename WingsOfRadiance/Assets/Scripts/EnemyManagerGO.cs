@@ -9,7 +9,8 @@ public class EnemyManagerGO : MonoBehaviour {
 	private GameObject startingtile;
 
     private GameObject level_selectionGO;
-    private GameObject enemytype_selectionGO;
+    private GameObject enemyfaction_selectionGO;
+	private GameObject enemytype_selectionGO;
     private GameObject enemyrarity_selectionGO;
     private GameObject chosenenemy_selectionGO;
     private GameObject clone_to_spawn;
@@ -66,16 +67,19 @@ public class EnemyManagerGO : MonoBehaviour {
 
     }
 
-    public GameObject SpawnAnEnemy(Transform where)
+    public GameObject SpawnAnEnemy(Transform where, string faction, string enemy_type)
     {
-        enemytype_selectionGO = level_selectionGO.transform.GetChild(Random.Range(0, level_selectionGO.transform.childCount)).gameObject;
-        //Debug.Log(itemtype_selectionGO);
+		Debug.Log (where + faction + enemy_type);
+		enemyfaction_selectionGO = level_selectionGO.transform.FindChild(faction).gameObject;
+		enemytype_selectionGO = enemyfaction_selectionGO.transform.FindChild(enemy_type).gameObject;
+		//enemytype_selectionGO = level_selectionGO.transform.GetChild(Random.Range(0, level_selectionGO.transform.childCount)).gameObject;
+		Debug.Log(enemytype_selectionGO);
         enemyrarity_selectionGO = enemytype_selectionGO.transform.GetChild(Random.Range(0, enemytype_selectionGO.transform.childCount)).gameObject;
-        //Debug.Log(itemrarity_selectionGO);
+		Debug.Log(enemyrarity_selectionGO);
         enemytable = enemyrarity_selectionGO.GetComponent<EnemyTable>().enemies;
         chosenenemy_selectionGO = enemytable[Random.Range(0, enemytable.Length)];
         thing_to_spawn = Instantiate(chosenenemy_selectionGO, where.position, where.rotation) as GameObject;
-        //Debug.Log("levelint " + level_int);
+        Debug.Log("levelint " + level_int);
         return thing_to_spawn;
     }
 

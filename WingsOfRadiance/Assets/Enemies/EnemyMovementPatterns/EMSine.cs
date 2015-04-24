@@ -8,6 +8,7 @@ public class EMSine : MonoBehaviour {
     public Vector3 sinevector;
     public Vector3 linearvector;
     public Vector3 movevector;
+	public Vector3 backgroundvector;
 	
 	// Update is called once per frame
     void Start()
@@ -19,6 +20,7 @@ public class EMSine : MonoBehaviour {
 
         sinevector = new Vector3(Mathf.Sin(transform.position.y), 0, 0) * amplitude;
         movevector = (sinevector + linearvector);//should keep a consistent speed.
-        transform.Translate(movevector * Time.deltaTime);
+		transform.Translate(movevector * Time.deltaTime);
+		transform.Translate(backgroundvector * Time.deltaTime, Space.World);
 	}
 }

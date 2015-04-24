@@ -19,6 +19,8 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
     public int drop_rng;
 	public int matter_to_drop;
 	public GameObject[] mattergos;
+	public bool moves_with_background;
+	public Vector3 backgroundvector;
 
     public string movement_pattern_string;
     public float sineamplitude;
@@ -29,6 +31,10 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
         //Debug.Log(lootmanager + "is your lootmanager!");
         drop_rng = UnityEngine.Random.Range(0, 100);
         speed = speed * speed_multiplier;
+		if (moves_with_background) {
+			backgroundvector = Vector3.up * -SharedVariables.startingtile.GetComponent<BackgroundBehaviour>().scrollspeed_y;}
+		else {backgroundvector = Vector3.up;}
+		Debug.Log ("backgroundvector: " + backgroundvector);
         AddMovePattern(movement_pattern_string);
 	}
 	
@@ -72,11 +78,13 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
                 //Debug.Log("I am moving forward!");
                 this.gameObject.AddComponent<EMForward>();
                 this.GetComponent<EMForward>().speed = speed;
+				this.GetComponent<EMForward>().backgroundvector = backgroundvector;
                 break;
             case "sine_wave":
                 this.gameObject.AddComponent<EMSine>();
                 this.GetComponent<EMSine>().linear_speed = speed;
                 this.GetComponent<EMSine>().amplitude = sineamplitude;
+				this.GetComponent<EMForward>().backgroundvector = backgroundvector;
                 //Debug.Log("I am moving in a sine wave!");
                 break;
             case default(string):

@@ -34,7 +34,7 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
 		if (moves_with_background) {
 			backgroundvector = Vector3.up * -SharedVariables.startingtile.GetComponent<BackgroundBehaviour>().scrollspeed_y;}
 		else {backgroundvector = Vector3.up;}
-		Debug.Log ("backgroundvector: " + backgroundvector);
+		//Debug.Log ("backgroundvector: " + backgroundvector);
         AddMovePattern(movement_pattern_string);
 	}
 	

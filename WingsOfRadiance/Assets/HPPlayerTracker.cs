@@ -7,7 +7,9 @@ public class HPPlayerTracker : MonoBehaviour {
 	public Quaternion rotation;
 	public float tracking_damping;
 
-	void Start(){player = GameObject.FindGameObjectWithTag("Player");}
+	void Start(){player = GameObject.FindGameObjectWithTag("Player");
+		//Debug.Log("player is" + player);
+	}
 	
 	// Update is called once per frame
 	void Update () {

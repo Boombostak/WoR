@@ -96,4 +96,23 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
                 break;
         }
     }
+
+	void OnTriggerEnter2D(Collider2D othercollider)
+	{
+		GameObject hitplayer;
+		PlayerTraits enemy_script;
+		if (othercollider.tag == "Player")
+		{
+			hitplayer = othercollider.gameObject;
+			enemy_script = hitplayer.GetComponent<PlayerTraits>();
+			
+			if (enemy_script.currentmatter >= 1)
+			{
+				enemy_script.currentmatter -= health;
+			}
+			Instantiate(explosion, this.transform.position, Quaternion.identity);
+			Destroy(this.gameObject);
+		}
+		//Debug.Log("hit"+othercollider);
+	}
 }

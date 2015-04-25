@@ -17,6 +17,8 @@ public class ItemBehaviour : MonoBehaviour {
     public bool isblinking = false;
 	public enum ItemType { fuselage, computer, engine, scoop, weapon, system, medal};
 	public ItemType itemtype;
+	public string itemtype_string;
+	public AudioClip audioclip;
     
     void Start()
     {
@@ -27,6 +29,33 @@ public class ItemBehaviour : MonoBehaviour {
         {
             StartCoroutine(ItemTimer());
         }
+
+		switch (itemtype)
+		{
+		case ItemType.fuselage: itemtype_string = "fuselage"; 
+			audioclip = Resources.Load ("fuselage") as AudioClip;
+			break;
+		case ItemType.computer: itemtype_string = "computer";
+			audioclip = Resources.Load ("computer") as AudioClip;
+			break;
+		case ItemType.engine: itemtype_string = "engine";
+			audioclip = Resources.Load ("engine") as AudioClip;
+			break;
+		case ItemType.scoop: itemtype_string = "scoop";
+			audioclip = Resources.Load ("scoop") as AudioClip;
+			break;
+		case ItemType.weapon: itemtype_string = "weapon";
+			audioclip = Resources.Load ("weapon") as AudioClip;
+			break;
+		case ItemType.system: itemtype_string = "system";
+			audioclip = Resources.Load ("system") as AudioClip;
+			break;
+		case ItemType.medal: itemtype_string = "medal";
+			audioclip = Resources.Load ("medal") as AudioClip;
+			break;
+		default :Debug.Log("No movement pattern!!!");
+			break;
+		}
     }
     
     void ItemMove()
@@ -78,11 +107,13 @@ public class ItemBehaviour : MonoBehaviour {
     {
         if (othercollider.tag == "Player")
         {
-            bool full =  false;
+			AudioManager.instance.PlaySingle(audioclip);
+			bool full =  false;
             //Debug.Log("item touched player");
             full = inventory.AddItem(this.gameObject);
             if (!full)
-            {
+			{
+				AudioManager.instance.PlaySingle(audioclip);
                 this.gameObject.SetActive(false);
             }
         }

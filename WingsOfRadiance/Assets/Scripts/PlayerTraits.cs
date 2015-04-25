@@ -31,6 +31,7 @@ public class PlayerTraits : MonoBehaviour {
 	public int credits;
 
     public float dps;
+	public GameObject deathexplosion;
 
 
 	void Awake(){
@@ -63,6 +64,9 @@ public class PlayerTraits : MonoBehaviour {
 
     void PlayerDied()
     {
+		Instantiate (deathexplosion, this.transform.position, Quaternion.identity);
+		GameObject.Find ("MissionManager").SendMessage("PlayerDied");
+		this.gameObject.SetActive (false);
         Debug.Log("Player has died");
     }
 }

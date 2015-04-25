@@ -21,6 +21,7 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
 	public GameObject[] mattergos;
 	public bool moves_with_background;
 	public Vector3 backgroundvector;
+	public GameObject popupgui;
 
     public string movement_pattern_string;
     public float sineamplitude;
@@ -54,6 +55,7 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
 			for (int i = 0; i < mattergos.Length; i++) {
 				Instantiate(mattergos[i], this.transform.position, Quaternion.identity);
 			}
+			//Instantiate(popupgui, this.transform.position, Quaternion.identity);
             DestroyThis();
         }
         

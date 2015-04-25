@@ -15,6 +15,8 @@ public class ItemBehaviour : MonoBehaviour {
     //public float countup = 0;
     public Color itemcolor;
     public bool isblinking = false;
+	public enum ItemType { fuselage, computer, engine, scoop, weapon, system, medal};
+	public ItemType itemtype;
     
     void Start()
     {

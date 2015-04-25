@@ -107,14 +107,13 @@ public class ItemBehaviour : MonoBehaviour {
     {
         if (othercollider.tag == "Player")
         {
-			AudioManager.instance.PlaySingle(audioclip);
 			bool full =  false;
             //Debug.Log("item touched player");
             full = inventory.AddItem(this.gameObject);
             if (!full)
 			{
-				AudioManager.instance.PlaySingle(audioclip);
                 this.gameObject.SetActive(false);
+				AudioManager.instance.PlaySingle(audioclip);
             }
         }
     }

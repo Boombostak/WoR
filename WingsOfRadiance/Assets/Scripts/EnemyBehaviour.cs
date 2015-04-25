@@ -56,6 +56,7 @@ public class EnemyBehaviour : MonoBehaviour, IDestructible, IDamageable {
 				Instantiate(mattergos[i], this.transform.position, Quaternion.identity);
 			}
 			//Instantiate(popupgui, this.transform.position, Quaternion.identity);
+			Instantiate(explosion, this.transform.position, Quaternion.identity);
             DestroyThis();
         }
         

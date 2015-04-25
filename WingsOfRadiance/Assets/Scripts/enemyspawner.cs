@@ -63,7 +63,7 @@ public class enemyspawner : MonoBehaviour {
             thing_to_spawn = enemymanager.GetComponent<EnemyManagerGO>().SpawnAnEnemy(this.transform, "Union", enemy_type);
             thing_to_spawn.GetComponent<EnemyBehaviour>().movement_pattern_string = movement_pattern;
             thing_to_spawn.GetComponent<EnemyBehaviour>().sineamplitude = sineamplitude;
-            GameObject.Instantiate (thing_to_spawn, this.transform.position, this.transform.rotation);
+            //GameObject.Instantiate (thing_to_spawn, this.transform.position, this.transform.rotation);
 			numberspawned++;
             countdown = time_between_spawns;
         }

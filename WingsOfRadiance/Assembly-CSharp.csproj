@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AnimFunctions.cs" />
      <Compile Include="Assets\Animations\PlayerFuselageAnim.cs" />
      <Compile Include="Assets\AudioManager.cs" />
      <Compile Include="Assets\Backgrounds\CameraBehaviour.cs" />

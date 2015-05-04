@@ -51,7 +51,7 @@ public class ItemBehaviour : MonoBehaviour {
 			audioclip = Resources.Load ("system") as AudioClip;
 			break;
 		case ItemType.medal: itemtype_string = "medal";
-			audioclip = Resources.Load ("medal") as AudioClip;
+			audioclip = Resources.Load ("decoration") as AudioClip;
 			break;
 		default :Debug.Log("No movement pattern!!!");
 			break;

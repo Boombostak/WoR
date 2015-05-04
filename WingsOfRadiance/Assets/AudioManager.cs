@@ -22,7 +22,12 @@ public class AudioManager : MonoBehaviour
 				//Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
 				DontDestroyOnLoad (gameObject);
 			}
-			
+
+
+			public void PlayMusic(AudioClip clip){
+				musicSource.clip = clip;
+				musicSource.Play ();
+		}
 			
 			//Used to play single sound clips.
 			public void PlaySingle(AudioClip clip)

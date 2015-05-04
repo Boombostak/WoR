@@ -35,7 +35,11 @@ public class MissionManager : MonoBehaviour {
 	void OnLevelWasLoaded(){
 		if (Application.loadedLevelName=="test") {
 			GameObject.Instantiate(SharedVariables.startingtile);
+			AudioManager.instance.PlayMusic(Resources.Load ("music1") as AudioClip);
 			}
+		if (Application.loadedLevelName=="homebase") {
+			AudioManager.instance.musicSource.Stop();
+				}
 		}
 
 	public void PlayerDied(){

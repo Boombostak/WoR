@@ -50,7 +50,7 @@ public class EnemyProjectile : MonoBehaviour {
             hitplayer = othercollider.gameObject;
             enemy_script = hitplayer.GetComponent<PlayerTraits>();
 
-            if (enemy_script.currentmatter >= 1)
+            if (enemy_script.currentmatter >= 0)
             {
                 enemy_script.currentmatter -= damage;
             }

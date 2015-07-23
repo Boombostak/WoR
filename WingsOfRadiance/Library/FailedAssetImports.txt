@@ -1,0 +1,2 @@
+Assets/PlaceHolder Art/backgrounds/starfieldBWwithgalaxy2.jpg
+Assets/PlaceHolder Art/ships/ships_void_0.png
